@@ -16,7 +16,7 @@ html ::-webkit-scrollbar {
  ::-webkit-scrollbar-track
  border-radius: 10px
  box-shadow: inset 0 0 6px (rgba(blue, $alpha)) **/
-body, #背景 {
+body, .背景 {
   height: 100vh;
   width: 100%;
   margin: 0;
@@ -24,6 +24,7 @@ body, #背景 {
 }
 
 body {
+  font-family: "HGS明朝E";
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -34,85 +35,139 @@ body {
 }
 
 body #背景 {
-  background: radial-gradient(white, #00bbff);
-  position: fixed;
   z-index: -100;
+  background: radial-gradient(white, #00bbff);
 }
 
-header #Title {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  text-decoration: none;
+body .背景 {
+  position: fixed;
 }
 
-header #Title:hover {
-  color: black;
-  background: rgba(255, 255, 255, 0.7);
-}
-
-header #Title_name div {
-  font-size: 4vmin;
-  margin: 1vh 0.5vmin;
-}
-
-header .Title_img {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-header .Title_img div {
-  margin: auto;
-  width: 5vmin;
-  height: 5vmin;
-  background: url("../images/球体.png");
-  background-size: cover;
-}
-
-ul {
-  background: rgba(0, 0, 0, 0.7);
-  color: white;
-  width: 100%;
+header a, header ul, header li {
+  z-index: 1;
   padding: 0;
   margin: 0;
-  list-style: none;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  border-bottom: 0.2vmin solid white;
+  height: 8vh;
+  min-height: 15vmin;
+}
+
+header a {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  text-decoration: none;
+  -webkit-transition: 0.3s ease-in;
+  transition: 0.3s ease-in;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  border-bottom: 0.3vmin solid white;
+}
+
+header a:hover {
+  background: rgba(255, 255, 255, 0.8);
+  color: black;
+  -webkit-transition: 0.3s ease-out;
+  transition: 0.3s ease-out;
+}
+
+header div {
+  margin: auto 1vmin;
+  font-size: 6vmin;
+}
+
+header .Title_img {
+  width: 5vmin;
+  height: 5vmin;
+  background: url("../images/球体.png");
+  background-size: contain;
 }
 
 main nav {
   top: 0;
   position: -webkit-sticky;
   position: sticky;
+  z-index: 100;
   margin: 0;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  font-size: 4vmax;
+  white-space: nowrap;
 }
 
-main nav li {
-  height: 5vmax;
-  width: 100%;
+main nav ul {
+  padding: 0;
+  margin: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  height: 8vh;
+  min-height: 15vmin;
 }
 
-main nav li a {
+main nav ul li {
+  width: 100%;
+  cursor: pointer;
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   text-decoration: none;
+  -webkit-transition: 0.3s ease-in;
+  transition: 0.3s ease-in;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  border-bottom: 0.3vmin solid white;
+}
+
+main nav ul li:hover {
+  background: rgba(255, 255, 255, 0.8);
+  color: black;
+  -webkit-transition: 0.3s ease-out;
+  transition: 0.3s ease-out;
+}
+
+main nav ul li a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
   margin: auto;
 }
 
-main nav li + li {
-  border-left: 0.2vmin solid white;
+main nav ul .選択中 {
+  font-size: 5vmax;
+  text-decoration: none;
+  -webkit-transition: 0.3s ease-in;
+  transition: 0.3s ease-in;
+  background: rgba(255, 255, 255, 0.8);
+  color: black;
+  border-bottom: 0.3vmin solid black;
+}
+
+main .ページ {
+  height: 0;
+  width: 100%;
+  opacity: 0;
+  overflow: hidden;
+}
+
+main .ページ.現在表示中 {
+  display: block;
+  height: auto;
+  -webkit-transition: opacity 0.7s;
+  transition: opacity 0.7s;
+  opacity: 1;
 }
 
 main #welcome {
   text-align: center;
-  font-size: 4vmin;
+  margin: 1vh;
 }
 
 main #main {
@@ -120,72 +175,98 @@ main #main {
   margin: auto;
 }
 
-footer p {
+#footer {
+  background: black;
+  margin-top: 5vh;
+  padding-top: 5vh;
   width: 100%;
-  margin: 0;
+}
+
+footer div {
+  background: -webkit-gradient(linear, left top, left bottom, from(#00bbff), color-stop(white), to(#00bbff));
+  background: linear-gradient(#00bbff, white, #00bbff);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 5vh;
+  width: 100%;
   bottom: 0;
-  text-align: center;
-  background: radial-gradient(circle, white, #00bbff);
   position: fixed;
 }
 
-.タブ {
-  cursor: pointer;
+footer div p {
+  width: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: auto;
+}
+
+#ホーム table {
+  width: 100%;
+  font-family: "";
+  border-collapse: collapse;
+}
+
+#ホーム table caption {
+  text-decoration: none;
+  -webkit-transition: 0.3s ease-in;
+  transition: 0.3s ease-in;
+  background: rgba(255, 255, 255, 0.4);
+  color: black;
+  border-bottom: 0.3vmin solid black;
+}
+
+#ホーム table caption:hover {
+  background: rgba(0, 0, 0, 0.4);
+  color: white;
   -webkit-transition: 0.3s ease-out;
   transition: 0.3s ease-out;
 }
 
-.タブ:hover {
-  background: rgba(255, 255, 255, 0.3);
-  color: black;
-}
-
-.タブ.選択中 {
-  background: rgba(255, 255, 255, 0.7);
-  color: black;
-  -webkit-transition: 0.3s ease-in;
-  transition: 0.3s ease-in;
-}
-
-.ページ {
-  display: none;
-  -webkit-transition-duration: 0.8s;
-          transition-duration: 0.8s;
-}
-
-.ページ.現在表示中 {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-transition-duration: 0.8s;
-          transition-duration: 0.8s;
-}
-
-#ホーム table {
-  border-collapse: collapse;
-}
-
-#ホーム table * {
-  border: 0.5px black solid;
-}
-
-#ホーム table caption {
-  background: rgba(255, 255, 255, 0.35);
-}
-
 #ホーム table th {
   text-align: center;
-  background: rgba(0, 0, 0, 0.35);
+  text-decoration: none;
+  -webkit-transition: 0.3s ease-in;
+  transition: 0.3s ease-in;
+  background: rgba(0, 0, 0, 0.4);
   color: white;
+  border-bottom: 0.3vmin solid white;
+}
+
+#ホーム table th:hover {
+  background: rgba(255, 255, 255, 0.4);
+  color: black;
+  -webkit-transition: 0.3s ease-out;
+  transition: 0.3s ease-out;
+}
+
+#ホーム table th:nth-child(1) {
+  border-right: 0.2vw solid white;
 }
 
 #ホーム table td {
   text-align: left;
-  background: rgba(255, 255, 255, 0.35);
+  text-decoration: none;
+  -webkit-transition: 0.3s ease-in;
+  transition: 0.3s ease-in;
+  background: rgba(255, 255, 255, 0.4);
+  color: black;
+  border-bottom: 0.3vmin solid black;
+}
+
+#ホーム table td:hover {
+  background: rgba(0, 0, 0, 0.4);
+  color: white;
+  -webkit-transition: 0.3s ease-out;
+  transition: 0.3s ease-out;
+}
+
+#Twitter {
+  z-index: -1;
 }
 
 #Twitter h2 {

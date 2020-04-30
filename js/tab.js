@@ -8,15 +8,6 @@ jQuery(function () {
   $(".タブ").eq(index).addClass('選択中')
   $(".ページ").eq(index).addClass('現在表示中')
 
-  //訪問回数の処理
-  var visit_count = $.cookie("visit_count");
-  if (visit_count == undefined) {
-    visit_count = 0;
-  }
-  visit_count++;
-  $.cookie("visit_count", visit_count, { expires: 1 });
-  $("#welcome").text(visit_count + "回目の訪問ありがとう☆");
-
   // タブがクリックされた時
   $('.タブ').click(function () {
     // クリックされたタブの順番をindex変数へ
@@ -25,9 +16,11 @@ jQuery(function () {
   });
 
   // スワイプされた時
-  $('body').on('touchstart', onTouchStart); //指が触れたか検知
-  $('body').on('touchmove', onTouchMove); //指が動いたか検知
-  $('body').on('touchend', onTouchEnd); //指が離れたか検知
+  // $main = $("nav>*")
+  $main = $("#main")
+  $main.on('touchstart', onTouchStart); //指が触れたか検知
+  $main.on('touchmove', onTouchMove); //指が動いたか検知
+  $main.on('touchend', onTouchEnd); //指が離れたか検知
   var direction, position;
 
   //スワイプ開始時の横方向の座標を格納
@@ -46,6 +39,9 @@ jQuery(function () {
   }
   
   function onTouchEnd(event) {
+    // タブのインデックスを取得
+    let min = 0
+    let max = $(".タブ").length - 1
     switch (direction) {
       case "left":
         index++
@@ -54,10 +50,10 @@ jQuery(function () {
         index--
         break;
     }
-    if (index < 0) {
-      index = 5
-    } else if (index > 5) {
-      index = 0
+    if (index < min) {
+      index = max
+    } else if (index > max) {
+      index = min
     }
     switch_tab(index)
   }
@@ -67,9 +63,6 @@ jQuery(function () {
     return event.originalEvent.touches[0].pageX;
   }
 });
-
-
-
 
 // タブの入れ替えメソッド
 function switch_tab(index) {

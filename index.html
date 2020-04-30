@@ -13,18 +13,19 @@
 </head>
 
 <body>
-  <div id="背景"></div>
+  <div class="背景" id="背景"></div>
+  <!-- <div class="背景" id="スワイプ"></div> -->
   <header>
-    <a href="index.html" id="Title">
+    <a href="index.html">
       <ul>
-        <li class="Title_img">
-          <div></div>
+        <li>
+          <div class="Title_img"></div>
         </li>
         <li id="Title_name">
           <div>たいきのほぉうむぺぇいじ</div>
         </li>
-        <li class="Title_img">
-          <div></div>
+        <li>
+          <div class="Title_img"></div>
         </li>
       </ul>
     </a>
@@ -33,15 +34,15 @@
     <nav>
       <ul>
         <li class="タブ"><a>ホーム</a></li>
-        <li class="タブ"><a>学校</a></li>
-        <li class="タブ"><a>趣味</a></li>
-        <li class="タブ"><a>意見</a></li>
+        <!-- <li class="タブ"><a>学校</a></li> -->
+        <!-- <li class="タブ"><a>趣味</a></li> -->
+        <!-- <li class="タブ"><a>意見</a></li> -->
         <li class="タブ"><a>Twitter</a></li>
-        <li class="タブ"><a>テスト</a></li>
+        <!-- <li class="タブ"><a>テスト</a></li> -->
       </ul>
     </nav>
     <div id="main">
-      <div id="welcome"></div>
+      <div id="welcome">ありがとう☆</div>
       <div class="ページ" id="ホーム">
         <h1>ホーム</h1>
         <h2>初めての(復習の?)たいきのホームページです。</h2>
@@ -109,32 +110,75 @@
             <td>スクロール時にメニューをトップに固定</td>
           </tr>
           <tr>
-            <th rowspan="2">2020/04/19</th>
-            <td>スワイプでタブの移動可</td>
+            <th rowspan="8">2020/04/19</th>
+            <td>スワイプでタブ移動を追加</td>
           </tr>
           <tr>
             <td>
               スワイプ可能領域を拡大
             </td>
           </tr>
+          <tr>
+            <td>
+              テーブル以外のフォントを変更
+            </td>
+          </tr>
+          <tr>
+            <td>
+              未完成のタブメニューを非表示に変更
+            </td>
+          </tr>
+          <tr>
+            <td>
+              タブメニューの仕様を変更
+            </td>
+          </tr>
+          <tr>
+            <td>
+              テーブルのレイアウトの変更
+            </td>
+          </tr>
+          <tr>
+            <td>
+              文字のコピーをペースト不可能な仕様に変更
+            </td>
+          </tr>
+          <tr>
+            <td>
+              タブ切り替えの仕様を変更
+            </td>
+          </tr>
+          <tr>
+            <th rowspan="4">2020/04/20</th>
+            <td>フッターのレイアウトを変更</td>
+          </tr>
+          <tr>
+            <td>タブ移動にアニメーションを付与</td>
+          </tr>
+          <tr>
+            <td>FFFTPの使用を終了</td>
+          </tr>
+          <tr>
+            <td>SFTPの利用を開始(FTP)</td>
+          </tr>
         </table>
       </div>
-      <div class="ページ" id="学校">
+      <!-- <div class="ページ" id="学校">
         <h1>学校</h1>
         <h2>次期にクラスメイトのみが閲覧可能なタブにする予定です。</h2>
-      </div>
-      <div class="ページ" id="趣味">
+      </div> -->
+      <!-- <div class="ページ" id="趣味">
         <h1>趣味</h1>
         <h2>ゲーム</h2>
         <h3>消滅都市</h3>
         <div id="消滅都市">
         </div>
-      </div>
-      <div class="ページ" id="意見">
+      </div> -->
+      <!-- <div class="ページ" id="意見">
         <h1>意見</h1>
         <p>俺に対する意見をバンバン書いてもらおうとしてる所です。</p>
         <p>いずれフォームを置こうと考えています。</p>
-      </div>
+      </div> -->
       <div class="ページ" id="Twitter">
         <h1>Twitter</h1>
         <h2>俺のタイムライン</h2>
@@ -146,16 +190,25 @@
           <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
         </div>
       </div>
-      <div class="ページ" id="テスト">
+      <!-- <div class="ページ" id="テスト">
         <h1>テスト</h1>
         <h2>タブの数を簡単に増やせるかどうかのテストをしただけです。</h2>
-      </div>
-      <h1>てすと</h1>
+      </div> -->
     </div>
   </main>
+
+  <!-- footer固定分＋空白を上部に -->
+  <span id="footer"></span>
+  <!-- footer固定分＋空白を上部に -->
+
   <footer>
-    <p>presented by Taiki&copy;</p>
+    <div>
+      <p>
+        presented by Taiki&copy;
+      </p>
+    </div>
   </footer>
+  <script src="js/main.js"></script>
   <script src="js/tab.js"></script>
   <script src="js/消滅都市.js"></script>
 </body>

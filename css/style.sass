@@ -1,5 +1,27 @@
-$color: white
-$alpha: 0.7
+@mixin ボタン($hover:true,$color:white,$alpha:0.8)
+  text-decoration: none
+  transition: 0.3s ease-in
+  background: rgba(invert($color),$alpha)
+  color: $color
+  border-bottom: 0.3vmin solid $color
+  @if $hover
+    &:hover
+      background: rgba($color,$alpha)
+      color: invert($color)
+      transition: 0.3s ease-out
+
+@mixin flex_center($height:8vh)
+  padding: 0
+  margin: 0
+  display: flex
+  height: $height
+  min-height: 15vmin
+
+@mixin グラデーション($color_1:white,$color_2:#00bbff)
+  background: radial-gradient($color_1,$color_2)
+
+// $color: white
+// $alpha: 0.7
 
 html
   ::-webkit-scrollbar
@@ -21,121 +43,132 @@ html
  box-shadow: inset 0 0 6px (rgba(blue, $alpha)) **/
 
 
-body,#背景
+body,.背景
     height: 100vh
     width: 100%
     margin: 0
     padding: 0
 body
+  font-family: "HGS明朝E"
   display: flex
   flex-direction: column
   #背景
-    background: radial-gradient($color, #00bbff)
-    position: fixed
     z-index: -100
+    @include グラデーション()
+  .背景
+    position: fixed
+    // display: hidden
 
 header
-  #Title
-    display: flex
-    text-decoration: none
-    &:hover 
-      color: invert($color)
-      background: rgba($color, $alpha)
-  #Title_name
-    div
-      font-size: 4vmin
-      margin: 1vh 0.5vmin
+  a,ul,li
+    z-index: 1
+    @include flex_center()
+  a
+    justify-content: center
+    @include ボタン()
+  div
+    margin: auto 1vmin
+    font-size: 6vmin
   .Title_img
-    display: flex
-    // 画像の大きさ
-    div
-      margin: auto
-      width: 5vmin
-      height: 5vmin
-      background: url("../images/球体.png")
-      background-size: cover
-
-ul
-  background: rgba(invert($color),$alpha)
-  color: $color
-  width: 100%
-  padding: 0
-  margin: 0
-  list-style: none
-  display: flex
-  border-bottom: 0.2vmin solid $color
-  justify-content: center
-
+    width: 5vmin
+    height: 5vmin
+    background: url("../images/球体.png")
+    background-size: contain
 
 main
   nav
     top: 0
     position: sticky
+    z-index: 100
     margin: 0
-    li
-      height: 5vmax
-      width: 100%
-      display: flex
-      a
-        text-decoration: none
-        // font-size: 30%
-        margin: auto
-      + li
-        border-left: 0.2vmin solid $color
+    overflow-x: auto
+    -webkit-overflow-scrolling: touch
+    font-size: 4vmax
+    white-space: nowrap
+    ul
+      @include flex_center()
+      li
+        width: 100%
+        cursor: pointer
+        list-style: none
+        display: flex
+        @include ボタン()
+        a
+          display: flex
+          justify-content: center
+          width: 100%
+          margin: auto
+      .選択中
+        font-size: 5vmax
+        @include ボタン(false,black)
+      // タブの実装
+  .ページ
+    height: 0
+    width: 100%
+    opacity: 0
+    overflow: hidden
+    &.現在表示中
+      display: block
+      height: auto
+      transition: opacity 0.7s
+      opacity: 1
+      // display: block
+      // flex-direction: column
+    // 更新状態のテーブルタグ
+
   #welcome
     text-align: center
-    font-size: 4vmin
+    margin: 1vh
   #main
     width: 95%
     margin: auto
 
 
+#footer
+  background: black
+  margin-top: 5vh
+  padding-top: 5vh
+  width: 100%
+
 footer
-  p
-    width: 100%
-    margin: 0
-    bottom: 0
-    text-align: center
-    background: radial-gradient(circle, $color, #00bbff)
-    position: fixed
-    // margin-top: auto
-// タブの実装
-.タブ
-  cursor: pointer
-  transition: 0.3s ease-out
-  &:hover
-    background: rgba($color,1.0-$alpha)
-    color: invert($color)
-  &.選択中
-    background: rgba($color,$alpha)
-    color: invert($color)
-    transition: 0.3s ease-in
-.ページ
-  display: none
-  transition-duration: 0.8s
-  &.現在表示中
+  div
+    background: linear-gradient(#00bbff,white,#00bbff)
     display: flex
-    flex-direction: column
-    transition-duration: 0.8s
-  // 更新状態のテーブルタグ
+    height: 5vh
+    width: 100%
+    bottom: 0
+    position: fixed
+    p
+      width: 100%
+      justify-content: center
+      display: flex
+      margin: auto
+  
+    // margin-top: auto
 
 // それぞれのページに対するスタイル
 #ホーム
   table
+    width: 100%
+    font-family: ""
     border-collapse: collapse
-    *
-      border: 0.5px invert($color) solid
+    // *
+      // border: none
+      // border: 0.5px invert($color) solid
     caption
-      background: rgba($color,$alpha / 2)
+      @include ボタン(true,black,0.4)
     th
       text-align: center
-      background: rgba(invert($color), $alpha / 2)
-      color: $color
+      @include ボタン(true,white,0.4)
+      &:nth-child(1)
+        border-right: 0.2vw solid white
     td
       text-align: left
-      background: rgba($color, $alpha / 2)
+      @include ボタン(true,black,0.4)
+      // background: rgba($color, $alpha / 2)
 
 #Twitter
+  z-index: -1
   h2
     text-align: center
   div
