@@ -15,17 +15,7 @@ body {
   margin: 0;
   padding: 0;
   background: radial-gradient(circle, #ffffff, #00bbff);
-}
-
-header a {
-  text-decoration: none;
-  color: white;
-  background: rgba(0, 0, 0, 0.6);
-}
-
-header a:hover {
-  color: black;
-  background: rgba(255, 255, 255, 0.6);
+  background-attachment: fixed;
 }
 
 header ul {
@@ -41,39 +31,55 @@ header ul {
   border-bottom: 0.2vw solid white;
 }
 
-header div {
-  font-size: 6vw;
+header #Title {
+  display: block;
+  text-decoration: none;
+  color: white;
+  background: rgba(0, 0, 0, 0.4);
 }
 
-header div li {
-  margin: auto 0.5vw;
+header #Title:hover {
+  color: black;
+  background: rgba(255, 255, 255, 0.4);
 }
 
-header div li div {
-  height: 6vw;
-  width: 6vw;
+header #Title_name div {
+  font-size: 4vw;
+  margin: 1vh 0.5vw;
+}
+
+header .Title_img {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+header .Title_img div {
+  margin: auto;
+  height: 5.1vw;
+  width: 5.1vw;
+  background: url("../images/球体.png");
+  background-size: cover;
+}
+
+header nav li {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  background: url("images/球体.png");
-  background-size: cover;
+  width: 100vw;
+  height: 5vw;
 }
 
-header nav li {
-  width: 100vw;
-  font-size: 5vw;
-  text-align: center;
+header nav li a {
+  font-size: 3vw;
+  margin: auto;
 }
 
 header nav li + li {
   border-left: 0.2vw solid white;
-}
-
-header a {
-  display: block;
 }
 
 main {
@@ -92,17 +98,22 @@ footer p {
 
 .タブ {
   cursor: pointer;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.4);
   color: white;
-  -webkit-transition: all 0.3s ease-out;
-  transition: all 0.3s ease-out;
+  -webkit-transition: 0.3s ease-out;
+  transition: 0.3s ease-out;
+}
+
+.タブ:hover {
+  background: rgba(255, 255, 255, 0.3);
+  color: black;
 }
 
 .タブ.選択中 {
-  background: rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.4);
   color: black;
-  -webkit-transition: all 0.3s ease-in;
-  transition: all 0.3s ease-in;
+  -webkit-transition: 0.3s ease-in;
+  transition: 0.3s ease-in;
 }
 
 .ページ {
@@ -111,5 +122,37 @@ footer p {
 
 .ページ.現在表示中 {
   display: block;
+}
+
+#Update_status caption {
+  font: 2vw bold;
+}
+
+#Update_status th {
+  text-align: center;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+}
+
+#Update_status th:nth-of-type(2) {
+  width: 100vw;
+}
+
+#Update_status td {
+  background: rgba(255, 255, 255, 0.6);
+}
+
+.ページ.Twitter h1 {
+  margin: 0;
+}
+
+.ページ.Twitter h2 {
+  margin: 0;
+  text-align: center;
+}
+
+#twitter {
+  margin: auto;
+  width: 80%;
 }
 /*# sourceMappingURL=style.css.map */

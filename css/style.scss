@@ -8,19 +8,10 @@ body {
   padding: 0;
   background: radial-gradient(circle, #ffffff, #00bbff);
   // background-size: cover;
-  // background-attachment: fixed;
+  background-attachment: fixed;
 }
 
 header {
-  a {
-    text-decoration: none;
-    color: white;
-    background: rgba(black, 0.6);
-  }
-  a:hover {
-    color: black;
-    background: rgba(white, 0.6);
-  }
   ul {
     padding: 0;
     margin: 0;
@@ -29,32 +20,47 @@ header {
     justify-content: center;
     border-bottom: 0.2vw solid white;
   }
-  div {
-    font-size: 6vw;
-    li {
-      margin: auto 0.5vw;
-      div {
-        height: 6vw;
-        width: 6vw;
-        display: flex;
-        justify-content: center;
-        background: url("images/球体.png");
-        background-size: cover;
-      }
+  #Title {
+    display: block;
+    text-decoration: none;
+    color: white;
+    background: rgba(black, 0.4);
+  }
+  #Title:hover {
+    color: black;
+    background: rgba(white, 0.4);
+  }
+  #Title_name {
+    div {
+      font-size: 4vw;
+      margin: 1vh 0.5vw;
+    }
+  }
+  .Title_img {
+    display: flex;
+    // 画像の大きさ
+    div {
+      margin: auto;
+      height: 5.1vw;
+      width: 5.1vw;
+      background: url("../images/球体.png");
+      background-size: cover;
     }
   }
   nav {
     li {
+      display: flex;
+      justify-content: center;
+      a {
+        font-size: 3vw;
+        margin: auto;
+      }
       width: 100vw;
-      font-size: 5vw;
-      text-align: center;
+      height: 5vw;
     }
     li + li {
       border-left: 0.2vw solid white;
     }
-  }
-  a {
-    display: block;
   }
 }
 
@@ -75,18 +81,55 @@ footer {
 // タブの実装
 .タブ {
   cursor: pointer;
-  background: rgba($color: #000, $alpha: 0.6);
+  background: rgba($color: #000, $alpha: 0.4);
   color: white;
-  transition: all 0.3s ease-out;
+  transition: 0.3s ease-out;
+}
+.タブ:hover {
+  background: rgba($color: #fff, $alpha: 0.3);
+  color: black;
 }
 .タブ.選択中 {
-  background: rgba($color: #fff, $alpha: 0.6);
+  background: rgba($color: #fff, $alpha: 0.4);
   color: black;
-  transition: all 0.3s ease-in;
+  transition: 0.3s ease-in;
 }
 .ページ {
   display: none;
 }
 .ページ.現在表示中 {
   display: block;
+}
+
+// 更新状態のテーブルタグ
+#Update_status {
+  caption {
+    font: 2vw bold;
+  }
+  th {
+    text-align: center;
+    background: rgba(black, 0.6);
+    color: white;
+  }
+  th:nth-of-type(2) {
+    width: 100vw;
+  }
+  td {
+    background: rgba(white, 0.6);
+  }
+}
+.ページ.Twitter{
+  h1{
+    margin: 0;
+  }
+  h2{
+    margin: 0;
+    text-align: center;
+  }
+
+}
+#twitter{
+  margin: auto;
+  width: 80%;
+  // background: #fff;
 }
