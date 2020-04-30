@@ -1,102 +1,107 @@
 $color: white
-$alpha: 0.2
+$alpha: 0.7
 
 html
-  // スクロールバーの装飾
-  overflow: hidden
-  // overflow-x: hidden
-  // overflow-y: overlay 
   ::-webkit-scrollbar
-    width: 2vw
-    max-width: 5px
-  ::-webkit-scrollbar-thumb
-    background: (rgba(blue, $alpha))
-    border-radius: 10px
-  ::-webkit-scrollbar-track 
-    border-radius: 10px
-    box-shadow: inset 0 0 6px (rgba(blue,$alpha))
+    display: none
+    -webkit-appearance: none
+    // overflow: hidden overlay
+    // overflow: scroll overlay
+/**   // スクロールバーの装飾
+ overflow-x: hidden
+ overflow-y: overlay
+ ::-webkit-scrollbar
+ width: 2%
+ max-width: 5px
+ ::-webkit-scrollbar-thumb
+ background: (rgba(blue, $alpha))
+ border-radius: 10px
+ ::-webkit-scrollbar-track 
+ border-radius: 10px
+ box-shadow: inset 0 0 6px (rgba(blue, $alpha)) **/
 
+
+body,#背景
+    height: 100vh
+    width: 100%
+    margin: 0
+    padding: 0
 body
   display: flex
   flex-direction: column
-  justify-content: space-between
-  height: 100vh
-  width: 100vw
-  margin: 0
-  padding: 0
-  background: radial-gradient($color, #00bbff)
-  background-attachment: fixed
+  #背景
+    background: radial-gradient($color, #00bbff)
+    position: fixed
+    z-index: -100
 
 header
-  ul
-    width: 100vw
-    padding: 0
-    margin: 0
-    list-style: none
-    display: flex
-    justify-content: center
-    border-bottom: 0.2vw solid $color
   #Title
-    display: block
+    display: flex
     text-decoration: none
-    color: $color
-    background: rgba(invert($color), $alpha)
     &:hover 
       color: invert($color)
       background: rgba($color, $alpha)
   #Title_name
     div
-      font-size: 4vw
-      margin: 1vh 0.5vw
+      font-size: 4vmin
+      margin: 1vh 0.5vmin
   .Title_img
     display: flex
     // 画像の大きさ
     div
       margin: auto
-      height: 5.1vw
-      width: 5.1vw
+      width: 5vmin
+      height: 5vmin
       background: url("../images/球体.png")
       background-size: cover
-  nav
-    li
-      width: 20vw
-      height: 5vw
-      display: flex
-      justify-content: center
-      + li
-        border-left: 0.2vw solid $color
-      a
-        font-size: 3vw
-        margin: auto
+
+ul
+  background: rgba(invert($color),$alpha)
+  color: $color
+  width: 100%
+  padding: 0
+  margin: 0
+  list-style: none
+  display: flex
+  border-bottom: 0.2vmin solid $color
+  justify-content: center
 
 
 main
-  width: 95vw
-  height: 80vh
-  margin: 2vw
-  flex: 1
-  overflow-y: auto
+  nav
+    top: 0
+    position: sticky
+    margin: 0
+    li
+      height: 5vmax
+      width: 100%
+      display: flex
+      a
+        text-decoration: none
+        // font-size: 30%
+        margin: auto
+      + li
+        border-left: 0.2vmin solid $color
   #welcome
-    // width: 100%
     text-align: center
-    font-size: 5vw
+    font-size: 4vmin
+  #main
+    width: 95%
+    margin: auto
 
 
 footer
   p
-    width: 100vw
+    width: 100%
     margin: 0
     bottom: 0
     text-align: center
     background: radial-gradient(circle, $color, #00bbff)
-    // background: rgba($color,0.9)
-
-
+    position: fixed
+    // margin-top: auto
 // タブの実装
 .タブ
   cursor: pointer
-  background: rgba(invert($color),$alpha)
-  color: $color
   transition: 0.3s ease-out
   &:hover
     background: rgba($color,1.0-$alpha)
@@ -109,32 +114,30 @@ footer
   display: none
   transition-duration: 0.8s
   &.現在表示中
-    display: block
     display: flex
     flex-direction: column
+    transition-duration: 0.8s
   // 更新状態のテーブルタグ
 
 // それぞれのページに対するスタイル
 #ホーム
-  width: 100%
-  // table,caption,th,td
   table
     border-collapse: collapse
     *
       border: 0.5px invert($color) solid
     caption
-      background: rgba($color,$alpha * 2)
+      background: rgba($color,$alpha / 2)
     th
       text-align: center
-      background: rgba(invert($color), $alpha * 2)
+      background: rgba(invert($color), $alpha / 2)
       color: $color
     td
       text-align: left
-      background: rgba($color, $alpha * 2)
+      background: rgba($color, $alpha / 2)
 
 #Twitter
   h2
     text-align: center
   div
-    width: 90vw
+    width: 90%
     margin: auto

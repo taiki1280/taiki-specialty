@@ -7,5 +7,6 @@ for (let i = 1; i < 90; i++) {
 
 $(".あ:nth-child(1)").css({
   "color": "#fff",
-  "background": "black"
+  "background": 'url("../消滅都市/降臨一覧/0101気高きマタドール.jpg")',
+  "background-size": "cover"
 })
