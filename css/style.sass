@@ -10,12 +10,11 @@
       color: invert($color)
       transition: 0.3s ease-out
 
-@mixin flex_center($height:8vh)
+@mixin flex_center($height:8vmax)
   padding: 0
   margin: 0
   display: flex
   height: $height
-  min-height: 15vmin
 
 @mixin グラデーション($color_1:white,$color_2:#00bbff)
   background: radial-gradient($color_1,$color_2)
@@ -77,20 +76,17 @@ header
 
 main
   nav
+    font-size: 6vmin
     top: 0
     position: sticky
     z-index: 100
     margin: 0
-    overflow-x: auto
-    -webkit-overflow-scrolling: touch
-    font-size: 4vmax
-    white-space: nowrap
     ul
       @include flex_center()
       li
-        width: 100%
         cursor: pointer
         list-style: none
+        width: 100%
         display: flex
         @include ボタン()
         a
@@ -98,31 +94,55 @@ main
           justify-content: center
           width: 100%
           margin: auto
-      .選択中
-        font-size: 5vmax
-        @include ボタン(false,black)
-      // タブの実装
-  .ページ
-    height: 0
-    width: 100%
-    opacity: 0
-    overflow: hidden
-    &.現在表示中
-      display: block
-      height: auto
-      transition: opacity 0.7s
-      opacity: 1
-      // display: block
-      // flex-direction: column
+        &.選択中
+          font-size: 12vmin
+          @include ボタン(false,black)
     // 更新状態のテーブルタグ
-
-  #welcome
-    text-align: center
-    margin: 1vh
   #main
     width: 95%
     margin: auto
-
+    #welcome
+      text-align: center
+      margin: 1vh
+    .ページ
+      height: 0
+      width: 100%
+      opacity: 0
+      overflow: hidden
+      &.現在表示中
+        display: block
+        height: auto
+        transition: opacity 0.7s
+        opacity: 1
+    // それぞれのページに対するスタイル
+    #ホーム
+      table
+        width: 100%
+        font-family: ""
+        border-collapse: collapse
+        // *
+          // border: none
+          // border: 0.5px invert($color) solid
+        caption
+          @include ボタン(true,black,0.4)
+        th
+          text-align: center
+          @include ボタン(true,white,0.4)
+          &:nth-child(1)
+            border-right: 0.2vw solid white
+        td
+          text-align: left
+          @include ボタン(true,black,0.4)
+    #Twitter
+      h2
+        text-align: center
+      div
+        margin: auto
+        width: 90%
+        max-width: 100vh
+        // height: 70vh
+        // overflow-y: scroll
+        background: black
 
 #footer
   background: black
@@ -143,34 +163,3 @@ footer
       justify-content: center
       display: flex
       margin: auto
-  
-    // margin-top: auto
-
-// それぞれのページに対するスタイル
-#ホーム
-  table
-    width: 100%
-    font-family: ""
-    border-collapse: collapse
-    // *
-      // border: none
-      // border: 0.5px invert($color) solid
-    caption
-      @include ボタン(true,black,0.4)
-    th
-      text-align: center
-      @include ボタン(true,white,0.4)
-      &:nth-child(1)
-        border-right: 0.2vw solid white
-    td
-      text-align: left
-      @include ボタン(true,black,0.4)
-      // background: rgba($color, $alpha / 2)
-
-#Twitter
-  z-index: -1
-  h2
-    text-align: center
-  div
-    width: 90%
-    margin: auto

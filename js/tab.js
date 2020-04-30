@@ -16,11 +16,10 @@ jQuery(function () {
   });
 
   // スワイプされた時
-  // $main = $("nav>*")
-  $main = $("#main")
-  $main.on('touchstart', onTouchStart); //指が触れたか検知
-  $main.on('touchmove', onTouchMove); //指が動いたか検知
-  $main.on('touchend', onTouchEnd); //指が離れたか検知
+  $body = $('body')
+  $body.on('touchstart', onTouchStart); //指が触れたか検知
+  $body.on('touchmove', onTouchMove); //指が動いたか検知
+  $body.on('touchend', onTouchEnd); //指が離れたか検知
   var direction, position;
 
   //スワイプ開始時の横方向の座標を格納
@@ -28,16 +27,17 @@ jQuery(function () {
     position = getPosition(event);
     direction = ''; //一度リセットする
   }
-  
+
   //スワイプの方向（left／right）を取得
   function onTouchMove(event) {
-    if (position - getPosition(event) > 70) { // 70px以上移動しなければスワイプと判断しない
+    // 70px以上移動しなければスワイプと判断しない
+    if (position - getPosition(event) > 70) {
       direction = 'left'; //左と検知
-    } else if (position - getPosition(event) < -70) {  // 70px以上移動しなければスワイプと判断しない
+    } else if (position - getPosition(event) < -70) {
       direction = 'right'; //右と検知
     }
   }
-  
+
   function onTouchEnd(event) {
     // タブのインデックスを取得
     let min = 0
