@@ -192,7 +192,7 @@ main #main #ホーム table caption:hover {
   transition: 0.3s ease-out;
 }
 
-main #main #ホーム table th {
+main #main #ホーム table tr:first-child {
   text-align: center;
   text-decoration: none;
   -webkit-transition: 0.3s ease-in;
@@ -202,19 +202,39 @@ main #main #ホーム table th {
   border-bottom: 0.3vmin solid white;
 }
 
-main #main #ホーム table th:hover {
+main #main #ホーム table tr:first-child:hover {
   background: rgba(255, 255, 255, 0.4);
   color: black;
   -webkit-transition: 0.3s ease-out;
   transition: 0.3s ease-out;
 }
 
-main #main #ホーム table th:nth-child(1) {
-  border-right: 0.2vw solid white;
+main #main #ホーム table tr:not(:first-child) td {
+  border: 0.5px black solid;
 }
 
-main #main #ホーム table td {
-  text-align: left;
+main #main #ホーム table tr:not(:first-child) td:first-child {
+  text-align: center;
+  text-decoration: none;
+  -webkit-transition: 0.3s ease-in;
+  transition: 0.3s ease-in;
+  background: rgba(0, 0, 0, 0.4);
+  color: white;
+  border-bottom: 0.3vmin solid white;
+}
+
+main #main #ホーム table tr:not(:first-child) td:first-child:hover {
+  background: rgba(255, 255, 255, 0.4);
+  color: black;
+  -webkit-transition: 0.3s ease-out;
+  transition: 0.3s ease-out;
+}
+
+main #main #ホーム table tr:not(:first-child) td:nth-child(2) {
+  text-align: center;
+}
+
+main #main #ホーム table tr:not(:first-child) td:not(:first-child) {
   text-decoration: none;
   -webkit-transition: 0.3s ease-in;
   transition: 0.3s ease-in;
@@ -223,7 +243,7 @@ main #main #ホーム table td {
   border-bottom: 0.3vmin solid black;
 }
 
-main #main #ホーム table td:hover {
+main #main #ホーム table tr:not(:first-child) td:not(:first-child):hover {
   background: rgba(0, 0, 0, 0.4);
   color: white;
   -webkit-transition: 0.3s ease-out;

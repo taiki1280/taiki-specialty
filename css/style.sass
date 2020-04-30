@@ -120,19 +120,25 @@ main
         width: 100%
         font-family: ""
         border-collapse: collapse
-        // *
-          // border: none
-          // border: 0.5px invert($color) solid
         caption
           @include ボタン(true,black,0.4)
-        th
-          text-align: center
-          @include ボタン(true,white,0.4)
-          &:nth-child(1)
-            border-right: 0.2vw solid white
-        td
-          text-align: left
-          @include ボタン(true,black,0.4)
+        tr
+          // thの役割
+          &:first-child,
+            text-align: center
+            @include ボタン(true,white,0.4)
+          // tdの役割
+          &:not(:first-child)
+            td
+              border: 0.5px black solid
+              &:first-child
+                text-align: center
+                @include ボタン(true,white,0.4)
+              &:nth-child(2)
+                text-align: center
+              &:not(:first-child)
+                @include ボタン(true,black,0.4)
+            
     #Twitter
       h2
         text-align: center
