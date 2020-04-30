@@ -6,8 +6,10 @@
   <title>Taiki's homepage</title>
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- <link rel="stylesheet" href="css/style.sass"> -->
   <link rel="stylesheet" href="css/style.css">
-  <script type="text/javascript" src="js/tab.js"></script>
+  <script src="js/jquery.js"></script>
+  <script src="js/jquery.cookie.js"></script>
 </head>
 
 <body>
@@ -25,26 +27,27 @@
         </li>
       </ul>
     </a>
-    <nav>
+    <nav id="nav">
       <ul>
-        <li class="タブ ホーム 選択中"><a>ホーム</div></a></li>
-        <li class="タブ 学校"><a>学校</a></li>
-        <li class="タブ 趣味"><a>趣味</a></li>
-        <li class="タブ 意見"><a>意見</a></li>
-        <li class="タブ Twitter"><a>Twitter</a></li>
-        <li class="タブ テスト"><a>テスト</a></li>
+        <li class="タブ"><a>ホーム</div></a></li>
+        <li class="タブ"><a>学校</a></li>
+        <li class="タブ"><a>趣味</a></li>
+        <li class="タブ"><a>意見</a></li>
+        <li class="タブ"><a>Twitter</a></li>
+        <li class="タブ"><a>テスト</a></li>
       </ul>
     </nav>
   </header>
   <main>
-    <div id="ホーム" class="ページ ホーム 現在表示中">
+    <div id="welcome"></div>
+    <div class="ページ" id="ホーム">
       <h1>ホーム</h1>
       <h2>初めての(復習の?)たいきのホームページです。</h2>
       <p>
         特に書くことが決まっていません。<br> 何を書けばいいんだろう。
       </p>
       <h3>とりまテーブルタグを置いてみた</h3>
-      <table id="Update_status" border="10">
+      <table>
         <caption>更新内容表</caption>
         <tr>
           <th>日付</th>
@@ -54,7 +57,7 @@
           <th rowspan="2">2020/03/30</th>
           <td>このテーブルを作成</td>
         <tr>
-          <td>ページタイトル両脇の画像の下の方が少し切れてしまっているバグを修正。</td>
+          <td>タイトル両脇の画像の下の方が少し切れているバグを修正</td>
         <tr>
           <th rowspan="3">2020/03/31</th>
           <td>タイトルとタブの文字の大きさをレスポンシブ対応</td>
@@ -78,22 +81,41 @@
           <td>スクロールのデザインを変更</td>
         </tr>
         </tr>
+        <tr>
+          <th rowspan="5">2020/04/12</th>
+          <td>javascriptの中身をjQueryの記述に変更</td>
+        <tr>
+          <td>リロード時にタブがホームになる仕様をならない仕様に変更</td>
+        </tr>
+        <tr>
+          <td>訪問回数を表示</td>
+        </tr>
+        <tr>
+          <td>FFFTPの使用を開始</td>
+        </tr>
+        <tr>
+          <td>スクロールの使用を変更</td>
+        </tr>
+        </tr>
       </table>
     </div>
-    <div id="学校" class="ページ 学校">
+    <div class="ページ" id="学校">
       <h1>学校</h1>
       <h2>次期にクラスメイトのみが閲覧可能なタブにする予定です。</h2>
     </div>
-    <div id="趣味" class="ページ 趣味">
+    <div class="ページ" id="趣味">
       <h1>趣味</h1>
-      <h2>趣味の一覧を表示したいと考えています。</h2>
+      <h2>ゲーム</h2>
+      <h3>消滅都市</h3>
+      <div id="消滅都市">
+      </div>
     </div>
-    <div id="意見" class="ページ 意見">
+    <div class="ページ" id="意見">
       <h1>意見</h1>
       <p>俺に対する意見をバンバン書いてもらおうとしてる所です。</p>
       <p>いずれフォームを置こうと考えています。</p>
     </div>
-    <div id="Twitter" class="ページ Twitter">
+    <div class="ページ" id="Twitter">
       <h1>Twitter</h1>
       <h2>俺のタイムライン</h2>
       <div id="test">
@@ -104,7 +126,7 @@
         <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
       </div>
     </div>
-    <div id="テスト" class="ページ テスト">
+    <div class="ページ" id="テスト">
       <h1>テスト</h1>
       <h2>タブの数を簡単に増やせるかどうかのテストをしただけです。</h2>
     </div>
@@ -112,6 +134,8 @@
   <footer>
     <p>presented by Taiki&copy;</p>
   </footer>
+  <script src="js/tab.js"></script>
+  <script src="js/消滅都市.js"></script>
 </body>
 
 </html>

@@ -1,17 +1,22 @@
 @charset "UTF-8";
 html {
-  overflow: hidden overlay;
+  overflow: hidden;
 }
 
 html ::-webkit-scrollbar {
-  width: 5px;
+  width: 2vw;
+  max-width: 5px;
 }
 
 html ::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.4);
+  background: rgba(0, 0, 255, 0.2);
   border-radius: 10px;
-  -webkit-box-shadow: none;
-          box-shadow: none;
+}
+
+html ::-webkit-scrollbar-track {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 255, 0.2);
+          box-shadow: inset 0 0 6px rgba(0, 0, 255, 0.2);
 }
 
 body {
@@ -29,10 +34,12 @@ body {
   width: 100vw;
   margin: 0;
   padding: 0;
-  background: radial-gradient(circle, #ffffff, #00bbff);
+  background: radial-gradient(white, #00bbff);
+  background-attachment: fixed;
 }
 
 header ul {
+  width: 100vw;
   padding: 0;
   margin: 0;
   list-style: none;
@@ -49,12 +56,12 @@ header #Title {
   display: block;
   text-decoration: none;
   color: white;
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(0, 0, 0, 0.2);
 }
 
 header #Title:hover {
   color: black;
-  background: rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.2);
 }
 
 header #Title_name div {
@@ -77,7 +84,7 @@ header .Title_img div {
 }
 
 header nav li {
-  width: 100vw;
+  width: 20vw;
   height: 5vw;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -97,23 +104,31 @@ header nav li a {
 }
 
 main {
-  margin: 0 2vw;
+  width: 95vw;
+  height: 80vh;
+  margin: 2vw;
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
-  overflow-y: clip;
+  overflow-y: auto;
+}
+
+main #welcome {
+  text-align: center;
+  font-size: 5vw;
 }
 
 footer p {
+  width: 100vw;
   margin: 0;
   bottom: 0;
   text-align: center;
-  background: rgba(255, 255, 255, 0.4);
+  background: radial-gradient(circle, white, #00bbff);
 }
 
 .タブ {
   cursor: pointer;
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(0, 0, 0, 0.2);
   color: white;
   -webkit-transition: 0.3s ease-out;
   transition: 0.3s ease-out;
@@ -125,7 +140,7 @@ footer p {
 }
 
 .タブ.選択中 {
-  background: rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.2);
   color: black;
   -webkit-transition: 0.3s ease-in;
   transition: 0.3s ease-in;
@@ -133,28 +148,46 @@ footer p {
 
 .ページ {
   display: none;
+  -webkit-transition-duration: 0.8s;
+          transition-duration: 0.8s;
 }
 
 .ページ.現在表示中 {
   display: block;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
-#ホーム caption {
-  font: 2vw bold;
+#ホーム {
+  width: 100%;
 }
 
-#ホーム th {
+#ホーム table {
+  border-collapse: collapse;
+}
+
+#ホーム table * {
+  border: 0.5px black solid;
+}
+
+#ホーム table caption {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+#ホーム table th {
   text-align: center;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.4);
   color: white;
 }
 
-#ホーム th:nth-of-type(2) {
-  width: 100vw;
-}
-
-#ホーム td {
-  background: rgba(255, 255, 255, 0.6);
+#ホーム table td {
+  text-align: left;
+  background: rgba(255, 255, 255, 0.4);
 }
 
 #Twitter h2 {
@@ -162,7 +195,7 @@ footer p {
 }
 
 #Twitter div {
-  background: white;
+  width: 90vw;
   margin: auto;
 }
 /*# sourceMappingURL=style.css.map */
