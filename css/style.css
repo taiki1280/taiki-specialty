@@ -1,4 +1,19 @@
 @charset "UTF-8";
+html {
+  overflow: hidden overlay;
+}
+
+html ::-webkit-scrollbar {
+  width: 5px;
+}
+
+html ::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 10px;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
 body {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -15,7 +30,6 @@ body {
   margin: 0;
   padding: 0;
   background: radial-gradient(circle, #ffffff, #00bbff);
-  background-attachment: fixed;
 }
 
 header ul {
@@ -63,14 +77,18 @@ header .Title_img div {
 }
 
 header nav li {
+  width: 100vw;
+  height: 5vw;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  width: 100vw;
-  height: 5vw;
+}
+
+header nav li + li {
+  border-left: 0.2vw solid white;
 }
 
 header nav li a {
@@ -78,15 +96,12 @@ header nav li a {
   margin: auto;
 }
 
-header nav li + li {
-  border-left: 0.2vw solid white;
-}
-
 main {
+  margin: 0 2vw;
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
-  overflow-y: scroll;
+  overflow-y: clip;
 }
 
 footer p {
@@ -105,7 +120,7 @@ footer p {
 }
 
 .タブ:hover {
-  background: rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.8);
   color: black;
 }
 
@@ -124,35 +139,30 @@ footer p {
   display: block;
 }
 
-#Update_status caption {
+#ホーム caption {
   font: 2vw bold;
 }
 
-#Update_status th {
+#ホーム th {
   text-align: center;
   background: rgba(0, 0, 0, 0.6);
   color: white;
 }
 
-#Update_status th:nth-of-type(2) {
+#ホーム th:nth-of-type(2) {
   width: 100vw;
 }
 
-#Update_status td {
+#ホーム td {
   background: rgba(255, 255, 255, 0.6);
 }
 
-.ページ.Twitter h1 {
-  margin: 0;
-}
-
-.ページ.Twitter h2 {
-  margin: 0;
+#Twitter h2 {
   text-align: center;
 }
 
-#twitter {
+#Twitter div {
+  background: white;
   margin: auto;
-  width: 80%;
 }
 /*# sourceMappingURL=style.css.map */
