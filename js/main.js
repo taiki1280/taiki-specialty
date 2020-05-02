@@ -1,18 +1,29 @@
 jQuery(function () {
   //訪問回数の処理
-  var visit_count = $.cookie("visit_count");
+  var visit_count = $.cookie("visit_count")
   if (visit_count == undefined) {
-    visit_count = 0;
+    visit_count = 0
   }
-  visit_count++;
-  $.cookie("visit_count", visit_count, { expires: 1 });
-  $("#welcome").prepend(visit_count + "回目の訪問");
+  visit_count++
+  $.cookie("visit_count", visit_count, { expires: 1 })
+  $("#welcome").prepend(visit_count + "回目の訪問")
 
   // CSVファイルの読み込み
   var csvfile = 'csv/update_content.csv'
   $.get(csvfile, readCsv, 'text')
+  // テーブルタグの日付同じ部分を結合
+  /* 
+  「注意」
+  テーブルデータの中身を一部削除するため、
+  列を複数指定する際には後ろの列から順番に指定。
+   */
+  $("#ホーム").delay(100).queue(function () {
+    set_rowSpan($("th")).dequeue()
+    // set_rowSpan($("td:nth-child(2)")).dequeue()
+  })
 })
 
+// CSV読み込みメソッド
 function readCsv(data) {
   var target = '#csv-body'
   var csv = $.csv.toArrays(data)
@@ -20,8 +31,17 @@ function readCsv(data) {
   $(csv).each(function () {
     if (this.length > 0) {
       insert += '<tr>'
-      $(this).each(function () {
-        insert += '<td>' + this + '</td>'
+      $(this).each(function (i) {
+        if (
+          this == "日付" ||
+          this == "更新項目" ||
+          this == "更新内容" ||
+          i == 0
+        ) {
+          insert += '<th>' + this + '</th>'
+        } else {
+          insert += '<td>' + this + '</td>'
+        }
       })
       insert += '</tr>'
     }
@@ -29,41 +49,41 @@ function readCsv(data) {
   $(target).append(insert)
 }
 
-// テーブルタグの日付同じ部分を結合
-$(function () {
-  var counter = 0;
-  var text = "";
-  var target = "";
-  // Q1: なぜ.reverse()？
-  // A1: 削除や統合などの処理を行う場合、前から処理すると、
-  //     削除したときに後ろの要素が前に詰まりますよね？それが原因で
-  //     配列の処理がおかしくなるケースがあったりします（処理の内容による）。
-  //     習慣として、後ろから処理してるのかなと推察します。
-  $($('#csv-body td:first-child').get().reverse()).each(function () {
-    if ($(this).text() == text) {
-      counter++;
-      // Q3: (target !="")ってどういうこと？というかこのtargetって具体的にどこを指してる？
-      // A3: targetが初期値でないことを確認しています。targetは
-      //     ひとつ前のセルを表しますが、初回に限っては
-      //     var target = ""とされており、ひとつ前のセルではないです。
-      //     初回はひとつ前のセルが存在しないので妥当な処理だと思います。
-      if (target != "")
-        target.remove();
+// 上から順に縦に見て、内容が同じなら結合するメソッド
+function set_rowSpan($date) {
+  var i = 0
+  var duplication_chara_array = []
+  var duplication_index_array = []
+  var now = ""
+  var cnt = 0
+  var dates = []
+  // 一列目にクラスを付与。
+  $date.addClass("date")
+  $date.each(function () {
+    dates.push($(this).text())
+  })
+  for (const i in dates) {
+    const v = dates[i];
+    if (now == v) {
+      cnt++
     } else {
-      if (target != "")
-        target.attr('rowSpan', counter);
-      // Q4：これは何？
-      // A4: counterの値を1に初期化しないと、counterの値が増え続け、
-      //     東京以外のセルが出てきた場合にそのセルまでくっつくことになります。
-      //     なので、こうしてます。
-      counter = 1;
+      now = v
+      $date.eq(i - cnt).attr("rowSpan", cnt)
+      cnt = 1
+      // 一回一回削除
+      duplication_chara_array = []
     }
-    // Q5: この記述は何のため？
-    // A5: セルのテキストを保持しておきます。次の確認で、
-    //      前のセルのテキストとして利用するためですね。
-    text = $(this).text();
-    // Q6: この記述は何のため？
-    // A6: セルを保持しておきます。次の確認で、前のセルとして利用するためです。
-    target = $(this);
-  });
-});
+    if (duplication_chara_array.indexOf(v) == -1) {
+      duplication_chara_array.push(v)
+    } else {
+      duplication_index_array.push(i)
+    }
+  }
+  // 最後の要素にrowSpanを付与
+  $date.eq(i - cnt).attr("rowSpan", cnt)
+  // 重複がある物は最初以外削除。
+  for (var i = duplication_index_array.length; i >= 0; i--) {
+    const element = duplication_index_array[i];
+    $date.eq(element).remove()
+  }
+}
