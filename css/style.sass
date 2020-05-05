@@ -48,11 +48,12 @@
     div
       margin: auto 1vmin
       font-size: 6vmin
-    .Title_img
-      width: 5vmin
-      height: 5vmin
-      background: url("../images/球体.png")
-      background-size: contain
+      &:nth-child(1),
+      &:nth-child(3)
+        width: 5vmin
+        height: 5vmin
+        background: url("../images/球体.png")
+        background-size: contain
 
   nav
     width: 100%

@@ -11,16 +11,9 @@
     margin: 0;
     padding: 0;
     font-family: "HGS明朝E";
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    flex-direction: column;
+    align-items: center;
   }
   body #背景 {
     z-index: -100;
@@ -36,17 +29,12 @@
     z-index: 1;
     padding: 0;
     margin: 0;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
     height: 10vmax;
   }
   header a {
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    justify-content: center;
     text-decoration: none;
-    -webkit-transition: 0.3s ease-in;
     transition: 0.3s ease-in;
     background: rgba(0, 0, 0, 0.8);
     color: white;
@@ -55,14 +43,13 @@
   header a:hover {
     background: rgba(255, 255, 255, 0.8);
     color: black;
-    -webkit-transition: 0.3s ease-out;
     transition: 0.3s ease-out;
   }
   header div {
     margin: auto 1vmin;
     font-size: 6vmin;
   }
-  header .Title_img {
+  header div:nth-child(1), header div:nth-child(3) {
     width: 5vmin;
     height: 5vmin;
     background: url("../images/球体.png");
@@ -70,30 +57,20 @@
   }
   nav {
     width: 100%;
-    position: -webkit-sticky;
     position: sticky;
     top: 0;
     font-size: 6vmin;
     padding: 0;
     margin: 0;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
     height: 10vh;
   }
   nav a {
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    display: -webkit-box;
-    display: -ms-flexbox;
+    justify-content: center;
+    align-items: center;
     display: flex;
     width: 100%;
     text-decoration: none;
-    -webkit-transition: 0.3s ease-in;
     transition: 0.3s ease-in;
     background: rgba(0, 0, 0, 0.8);
     color: white;
@@ -102,13 +79,11 @@
   nav a:hover {
     background: rgba(255, 255, 255, 0.8);
     color: black;
-    -webkit-transition: 0.3s ease-out;
     transition: 0.3s ease-out;
   }
   nav a.選択中 {
     font-size: 12vmin;
     text-decoration: none;
-    -webkit-transition: 0.3s ease-in;
     transition: 0.3s ease-in;
     background: rgba(255, 255, 255, 0.8);
     color: black;
@@ -131,7 +106,6 @@
   main .ページ.現在表示中 {
     display: block;
     height: auto;
-    -webkit-transition: opacity 0.7s;
     transition: opacity 0.7s;
     opacity: 1;
   }
@@ -142,7 +116,6 @@
   }
   main #ホーム table caption {
     text-decoration: none;
-    -webkit-transition: 0.3s ease-in;
     transition: 0.3s ease-in;
     background: rgba(255, 255, 255, 0.4);
     color: black;
@@ -151,7 +124,6 @@
   main #ホーム table caption:hover {
     background: rgba(0, 0, 0, 0.4);
     color: white;
-    -webkit-transition: 0.3s ease-out;
     transition: 0.3s ease-out;
   }
   main #ホーム table tr th, main #ホーム table tr td {
@@ -160,7 +132,6 @@
   }
   main #ホーム table tr th {
     text-decoration: none;
-    -webkit-transition: 0.3s ease-in;
     transition: 0.3s ease-in;
     background: rgba(0, 0, 0, 0.4);
     color: white;
@@ -169,12 +140,10 @@
   main #ホーム table tr th:hover {
     background: rgba(255, 255, 255, 0.4);
     color: black;
-    -webkit-transition: 0.3s ease-out;
     transition: 0.3s ease-out;
   }
   main #ホーム table tr td {
     text-decoration: none;
-    -webkit-transition: 0.3s ease-in;
     transition: 0.3s ease-in;
     background: rgba(255, 255, 255, 0.4);
     color: black;
@@ -183,7 +152,6 @@
   main #ホーム table tr td:hover {
     background: rgba(0, 0, 0, 0.4);
     color: white;
-    -webkit-transition: 0.3s ease-out;
     transition: 0.3s ease-out;
   }
   main #Twitter h2 {
@@ -195,10 +163,7 @@
     max-width: 100vh;
   }
   footer {
-    background: -webkit-gradient(linear, left top, left bottom, from(#00bbff), color-stop(white), to(#00bbff));
     background: linear-gradient(#00bbff, white, #00bbff);
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
     height: 5vh;
     width: 100%;
@@ -207,13 +172,8 @@
   }
   footer p {
     width: 100%;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    display: -webkit-box;
-    display: -ms-flexbox;
+    justify-content: center;
     display: flex;
     margin: auto;
   }
 }
-/*# sourceMappingURL=style.css.map */
