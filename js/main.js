@@ -18,6 +18,8 @@ jQuery(function () {
   列を複数指定する際には後ろの列から順番に指定。
    */
   $("#ホーム").delay(100).queue(function () {
+    $("#ホーム td:nth-child(2)").addClass("更新項目")
+    $("#ホーム td:nth-child(3)").addClass("更新内容")
     set_rowSpan($("th")).dequeue()
     // set_rowSpan($("td:nth-child(2)")).dequeue()
   })

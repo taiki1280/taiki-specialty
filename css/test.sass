@@ -1,0 +1,147 @@
+=default($color: #fff,$alpha: .9)
+  color: $color
+  background: rgba(invert($color),$alpha)
+    
+@media screen and (orientation: portrait )
+  html
+    overflow-x: hidden
+    scroll-padding-top: 8vh
+    scroll-behavior: smooth
+    ::-webkit-scrollbar
+      display: none
+      -webkit-appearance: none
+    *
+      padding: 0
+      margin: 0
+      text-decoration: none
+      list-style: none
+
+  body
+    background: linear-gradient(90deg,#00aaff,#fff,#00aaff)
+  
+  header
+    > a
+      height: 10vh
+      width: 100%
+      display: flex
+      align-items: center
+      justify-content: center
+      border-bottom: solid 1px
+      +default()
+      div
+        &:nth-child(2)
+          font-size: 6vw
+          margin: 0 2vw
+        &:nth-child(1),
+        &:nth-child(3)
+          height: 8vw
+          width: 8vw
+          background: url(../images/球体.png)
+          background-size: contain
+          background-repeat: no-repeat
+
+  nav
+    z-index: 2
+    position: -webkit-sticky
+    position: sticky
+    top: 0
+    display: flex
+    align-items: center
+    justify-content: space-around
+    a
+      font-size: 6vw
+      height: 8vh
+      width: 100%
+      display: flex
+      align-items: center
+      justify-content: center
+      transition: ease 0.7s
+      +default()
+      &.選択中
+        +default(#000)
+        font-size: 10vw
+        transition: ease 0.7s
+
+  main
+    #welcome
+      text-align: center
+      margin-top: 2.5vh
+    .ページ
+      height: 0
+      margin: 0 5vw
+      opacity: 0
+      overflow: hidden
+      &.現在表示中
+        display: block
+        height: auto
+        transition: ease opacity 0.8s 0.2s
+        opacity: 1
+      > h1
+        height: 8vh
+        outline: solid
+        display: flex
+        justify-content: center
+        align-items: center
+      > p
+        padding: 1vh
+        +default(#000,.2)
+      > h1,> h2,> h3
+        margin: 2.5vh 0vh 1vh 0
+        padding: 1vh
+        +default(#000,.2)
+      > h2,> h3
+        border-bottom: solid 1px
+        display: inline-block
+
+    #ホーム
+      > h2
+        margin-bottom: 0
+        border-top: solid 1px #fff
+        border-right: solid 1px #fff
+        border-left: solid 1px #fff
+        border-bottom: none
+      > p
+        border: solid 1px #fff
+      > table
+        border-collapse: collapse
+        width: 100%
+        caption
+          display: none
+        tr
+          display: flex
+          flex-wrap: wrap
+          &:first-child
+            display: none
+          th,td
+            display: flex
+            justify-content: center
+            align-items: center
+          th
+            width: 100%
+            font-size: 10vw
+            padding: 1vh
+            border-top: solid #fff 1px
+            border-bottom: solid #000 1px
+            +default($color:#000, $alpha:.6)
+          td
+            font-size: 5vw
+            padding: 1vh 2%
+            text-align: left
+          .更新項目
+            width: 100%
+            +default($color:#000, $alpha:.6)
+          .更新内容
+            width: 100%
+            +default($alpha:.6)
+
+  footer
+    background: linear-gradient(#00bbff,white,#00bbff)
+    display: flex
+    align-items: center
+    justify-content: center
+    height: 0
+    width: 100%
+    padding: 2.5vh 0
+    margin-top: 2.5vh
+    position: sticky
+    bottom: 0

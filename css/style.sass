@@ -10,7 +10,7 @@
       color: invert($color)
       transition: 0.3s ease-out
 
-@mixin flex_center($height:8vmax)
+@mixin flex_center($height:10vmax)
   padding: 0
   margin: 0
   display: flex
@@ -19,88 +19,61 @@
 @mixin グラデーション($color_1:white,$color_2:#00bbff)
   background: radial-gradient($color_1,$color_2)
 
-// $color: white
-// $alpha: 0.7
-
-html
-  ::-webkit-scrollbar
-    display: none
-    -webkit-appearance: none
-    // overflow: hidden overlay
-    // overflow: scroll overlay
-/**   // スクロールバーの装飾
- overflow-x: hidden
- overflow-y: overlay
- ::-webkit-scrollbar
- width: 2%
- max-width: 5px
- ::-webkit-scrollbar-thumb
- background: (rgba(blue, $alpha))
- border-radius: 10px
- ::-webkit-scrollbar-track 
- border-radius: 10px
- box-shadow: inset 0 0 6px (rgba(blue, $alpha)) **/
-
-
-body,.背景
+@media screen and (orientation: landscape )
+  html
+    scroll-padding-top: 10vmax
+  .背景
     height: 100vh
     width: 100%
+  body
     margin: 0
     padding: 0
-body
-  font-family: "HGS明朝E"
-  display: flex
-  flex-direction: column
-  #背景
-    z-index: -100
-    @include グラデーション()
-  .背景
-    position: fixed
-    // display: hidden
-
-header
-  a,ul,li
-    z-index: 1
-    @include flex_center()
-  a
-    justify-content: center
-    @include ボタン()
-  div
-    margin: auto 1vmin
-    font-size: 6vmin
-  .Title_img
-    width: 5vmin
-    height: 5vmin
-    background: url("../images/球体.png")
-    background-size: contain
-
-main
-  nav
-    font-size: 6vmin
-    top: 0
-    position: sticky
-    z-index: 100
-    margin: 0
-    ul
+    font-family: "HGS明朝E"
+    display: flex
+    flex-direction: column
+    align-items: center
+    #背景
+      z-index: -100
+      @include グラデーション()
+    .背景
+      position: fixed
+  header
+    width: 100%
+    a,ul,li
+      z-index: 1
       @include flex_center()
-      li
-        cursor: pointer
-        list-style: none
-        width: 100%
-        display: flex
-        @include ボタン()
-        a
-          display: flex
-          justify-content: center
-          width: 100%
-          margin: auto
-        &.選択中
-          font-size: 12vmin
-          @include ボタン(false,black)
+    a
+      justify-content: center
+      @include ボタン()
+    div
+      margin: auto 1vmin
+      font-size: 6vmin
+    .Title_img
+      width: 5vmin
+      height: 5vmin
+      background: url("../images/球体.png")
+      background-size: contain
+
+  nav
+    width: 100%
+    position: sticky
+    top: 0
+    font-size: 6vmin
+    @include flex_center(10vh)
+    a
+      justify-content: center
+      align-items: center
+      display: flex
+      width: 100%
+      @include ボタン()
+      &.選択中
+        font-size: 12vmin
+        @include ボタン(false,black)
     // 更新状態のテーブルタグ
-  #main
+  main
+    // background: black
     width: 95%
-    margin: auto
+    margin: 2vw 0
     #welcome
       text-align: center
       margin: 1vh
@@ -142,18 +115,10 @@ main
         margin: auto
         width: 90%
         max-width: 100vh
-        // height: 70vh
         // overflow-y: scroll
-        background: black
+        // height: 70vh
 
-#footer
-  background: black
-  margin-top: 5vh
-  padding-top: 5vh
-  width: 100%
-
-footer
-  div
+  footer
     background: linear-gradient(#00bbff,white,#00bbff)
     display: flex
     height: 5vh

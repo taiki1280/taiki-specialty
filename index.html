@@ -4,11 +4,12 @@
 <head>
   <meta name="google-site-verification" content="RItJFGH4iQAQoEbwvcAxBbM1TaX7lLKOe9a83pH8s8A" />
   <meta charset="UTF-8">
-  <title>Taiki's homepage</title>
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- <link rel="stylesheet" href="css/style.sass"> -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+  <title>Taiki's homepage</title>
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/test.css">
+  <link rel="stylesheet" href="css/test.sass">
   <script src="js/jquery.js"></script>
   <script src="js/jquery.cookie.js"></script>
   <script src="js/jquery.csv.min.js"></script>
@@ -21,91 +22,73 @@
   <!-- <div class="背景"></div> -->
   <header>
     <a href="index.html">
-      <ul>
-        <li>
-          <div class="Title_img"></div>
-        </li>
-        <li id="Title_name">
-          <div>たいきのほぉうむぺぇいじ</div>
-        </li>
-        <li>
-          <div class="Title_img"></div>
-        </li>
-      </ul>
+      <div></div>
+      <div>たいきのほぉうむぺぇいじ</div>
+      <div></div>
     </a>
   </header>
+  <nav>
+    <a class="タブ" href="#ホーム">ホーム</a>
+    <!-- <a class="タブ">学校</a> -->
+    <!-- <a class="タブ">趣味</a> -->
+    <!-- <a class="タブ">意見</a> -->
+    <a class="タブ" href="#Twitter">Twitter</a>
+    <!-- <a class="タブ">テスト</a> -->
+  </nav>
   <main>
-    <nav>
-      <ul>
-        <li class="タブ"><a>ホーム</a></li>
-        <!-- <li class="タブ"><a>学校</a></li> -->
-        <!-- <li class="タブ"><a>趣味</a></li> -->
-        <!-- <li class="タブ"><a>意見</a></li> -->
-        <li class="タブ"><a>Twitter</a></li>
-        <!-- <li class="タブ"><a>テスト</a></li> -->
-      </ul>
-    </nav>
-    <div id="main">
-      <div id="welcome">ありがとう☆</div>
-      <div class="ページ" id="ホーム">
-        <h1>ホーム</h1>
-        <h2>たいきのホームページ</h2>
-        <p>
-          初めてのたいきのホームぺ時です。<br>
-          前々からしっかりとしたホームページを作りたいと思っていた。<br>
-          HTML5&CSS3の復習も兼ねています。<br>
-          他に特に書くことが決まっていません。<br>
-          何を書けばいいんだろう。<br>
-        </p>
-        <h3>とりまテーブルタグを置いてみた</h3>
-        <table>
-          <caption>更新内容表</caption>
-          <tbody id='csv-body'></tbody>
-        </table>
-      </div>
-      <!-- <div class="ページ" id="学校">
-        <h1>学校</h1>
-        <h2>次期にクラスメイトのみが閲覧可能なタブにする予定です。</h2>
-      </div> -->
-      <!-- <div class="ページ" id="趣味">
-        <h1>趣味</h1>
-        <h2>ゲーム</h2>
-        <h3>消滅都市</h3>
-        <div id="消滅都市">
-        </div>
-      </div> -->
-      <!-- <div class="ページ" id="意見">
-        <h1>意見</h1>
-        <p>俺に対する意見をバンバン書いてもらおうとしてる所です。</p>
-        <p>いずれフォームを置こうと考えています。</p>
-      </div> -->
-      <div class="ページ" id="Twitter">
-        <h1>Twitter</h1>
-        <h2>俺のタイムライン</h2>
-        <div>
-          <a class="twitter-timeline" data-lang="ja" width="100%" data-theme="dark"
-            href="https://twitter.com/taiki_global?ref_src=twsrc%5Etfw">
-            Tweets by taiki_global
-          </a>
-          <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-        </div>
-      </div>
-      <!-- <div class="ページ" id="テスト">
-        <h1>テスト</h1>
-        <h2>タブの数を簡単に増やせるかどうかのテストをしただけです。</h2>
-      </div> -->
+    <div id="welcome">ありがとう☆</div>
+    <div class="ページ" id="ホーム">
+      <h1>ホーム</h1>
+      <h2>たいきのホームページ</h2>
+      <p>
+        初めてのたいきのホームページです。<br>
+        前々から作りたいと思っていました。<br>
+        HTML5&CSS3の復習も兼ねています。<br>
+        特に書くことが決まっていません。<br>
+        何を書けばいいんだろう。<br>
+        意見あったら教えてください。<br>
+      </p>
+      <h3>とりまテーブルタグを置いてみた</h3>
+      <table>
+        <caption>更新内容表</caption>
+        <tbody id='csv-body'></tbody>
+      </table>
     </div>
+    <!-- <div class="ページ" id="学校">
+      <h1>学校</h1>
+      <h2>次期にクラスメイトのみが閲覧可能なタブにする予定です。</h2>
+    </div> -->
+    <!-- <div class="ページ" id="趣味">
+      <h1>趣味</h1>
+      <h2>ゲーム</h2>
+      <h3>消滅都市</h3>
+      <div id="消滅都市">
+      </div>
+    </div> -->
+    <!-- <div class="ページ" id="意見">
+      <h1>意見</h1>
+      <p>俺に対する意見をバンバン書いてもらおうとしてる所です。</p>
+      <p>いずれフォームを置こうと考えています。</p>
+    </div> -->
+    <div class="ページ" id="Twitter">
+      <h1>Twitter</h1>
+      <h2>俺のタイムライン</h2>
+      <div>
+        <a class="twitter-timeline" data-lang="ja" width="100%" data-theme="dark"
+          href="https://twitter.com/taiki_global?ref_src=twsrc%5Etfw">
+          Tweets by taiki_global
+        </a>
+        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+      </div>
+    </div>
+    <!-- <div class="ページ" id="テスト">
+      <h1>テスト</h1>
+      <h2>タブの数を簡単に増やせるかどうかのテストをしただけです。</h2>
+    </div> -->
   </main>
-  <!-- footer固定分＋空白を上部に -->
-  <span id="footer"></span>
-  <!-- footer固定分＋空白を上部に -->
 
   <footer>
-    <div>
-      <p>
-        presented by Taiki&copy;
-      </p>
-    </div>
+    <div>presented by Taiki&copy;</div>
   </footer>
 </body>
 
