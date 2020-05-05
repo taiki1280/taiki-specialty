@@ -60,7 +60,7 @@
     position: sticky
     top: 0
     font-size: 6vmin
-    @include flex_center(10vh)
+    @include flex_center()
     a
       justify-content: center
       align-items: center
@@ -122,12 +122,10 @@
   footer
     background: linear-gradient(#00bbff,white,#00bbff)
     display: flex
+    justify-content: center
     height: 5vh
     width: 100%
+    position: sticky
     bottom: 0
-    position: fixed
-    p
-      width: 100%
-      justify-content: center
-      display: flex
+    div
       margin: auto
