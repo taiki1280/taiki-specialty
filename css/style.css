@@ -11,9 +11,16 @@
     margin: 0;
     padding: 0;
     font-family: "HGS明朝E";
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
   body #背景 {
     z-index: -100;
@@ -29,12 +36,17 @@
     z-index: 1;
     padding: 0;
     margin: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     height: 10vmax;
   }
   header a {
-    justify-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     text-decoration: none;
+    -webkit-transition: 0.3s ease-in;
     transition: 0.3s ease-in;
     background: rgba(0, 0, 0, 0.8);
     color: white;
@@ -43,6 +55,7 @@
   header a:hover {
     background: rgba(255, 255, 255, 0.8);
     color: black;
+    -webkit-transition: 0.3s ease-out;
     transition: 0.3s ease-out;
   }
   header div {
@@ -57,20 +70,30 @@
   }
   nav {
     width: 100%;
+    position: -webkit-sticky;
     position: sticky;
     top: 0;
     font-size: 6vmin;
     padding: 0;
     margin: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     height: 10vmax;
   }
   nav a {
-    justify-content: center;
-    align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     width: 100%;
     text-decoration: none;
+    -webkit-transition: 0.3s ease-in;
     transition: 0.3s ease-in;
     background: rgba(0, 0, 0, 0.8);
     color: white;
@@ -79,11 +102,13 @@
   nav a:hover {
     background: rgba(255, 255, 255, 0.8);
     color: black;
+    -webkit-transition: 0.3s ease-out;
     transition: 0.3s ease-out;
   }
   nav a.選択中 {
     font-size: 12vmin;
     text-decoration: none;
+    -webkit-transition: 0.3s ease-in;
     transition: 0.3s ease-in;
     background: rgba(255, 255, 255, 0.8);
     color: black;
@@ -106,6 +131,7 @@
   main .ページ.現在表示中 {
     display: block;
     height: auto;
+    -webkit-transition: opacity 0.7s;
     transition: opacity 0.7s;
     opacity: 1;
   }
@@ -116,6 +142,7 @@
   }
   main #ホーム table caption {
     text-decoration: none;
+    -webkit-transition: 0.3s ease-in;
     transition: 0.3s ease-in;
     background: rgba(255, 255, 255, 0.4);
     color: black;
@@ -124,6 +151,7 @@
   main #ホーム table caption:hover {
     background: rgba(0, 0, 0, 0.4);
     color: white;
+    -webkit-transition: 0.3s ease-out;
     transition: 0.3s ease-out;
   }
   main #ホーム table tr th, main #ホーム table tr td {
@@ -132,6 +160,7 @@
   }
   main #ホーム table tr th {
     text-decoration: none;
+    -webkit-transition: 0.3s ease-in;
     transition: 0.3s ease-in;
     background: rgba(0, 0, 0, 0.4);
     color: white;
@@ -140,10 +169,12 @@
   main #ホーム table tr th:hover {
     background: rgba(255, 255, 255, 0.4);
     color: black;
+    -webkit-transition: 0.3s ease-out;
     transition: 0.3s ease-out;
   }
   main #ホーム table tr td {
     text-decoration: none;
+    -webkit-transition: 0.3s ease-in;
     transition: 0.3s ease-in;
     background: rgba(255, 255, 255, 0.4);
     color: black;
@@ -152,6 +183,7 @@
   main #ホーム table tr td:hover {
     background: rgba(0, 0, 0, 0.4);
     color: white;
+    -webkit-transition: 0.3s ease-out;
     transition: 0.3s ease-out;
   }
   main #Twitter h2 {
@@ -163,11 +195,17 @@
     max-width: 100vh;
   }
   footer {
+    background: -webkit-gradient(linear, left top, left bottom, from(#00bbff), color-stop(white), to(#00bbff));
     background: linear-gradient(#00bbff, white, #00bbff);
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     height: 5vh;
     width: 100%;
+    position: -webkit-sticky;
     position: sticky;
     bottom: 0;
   }
@@ -175,3 +213,4 @@
     margin: auto;
   }
 }
+/*# sourceMappingURL=style.css.map */

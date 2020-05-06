@@ -1,11 +1,16 @@
 =default($color: #fff,$alpha: .9)
   color: $color
   background: rgba(invert($color),$alpha)
+
+=flex-center()
+  display: flex
+  align-items: center
+  justify-content: center
     
 @media screen and (orientation: portrait )
   html
     overflow-x: hidden
-    scroll-padding-top: 8vh
+    scroll-padding-top: 10vh
     scroll-behavior: smooth
     ::-webkit-scrollbar
       display: none
@@ -18,15 +23,15 @@
 
   body
     background: linear-gradient(90deg,#00aaff,#fff,#00aaff)
+    font-family: "HGS明朝E"
+
   
   header
     > a
       height: 10vh
       width: 100%
-      display: flex
-      align-items: center
-      justify-content: center
       border-bottom: solid 1px
+      +flex-center()
       +default()
       div
         &:nth-child(2)
@@ -45,21 +50,18 @@
     position: -webkit-sticky
     position: sticky
     top: 0
-    display: flex
-    align-items: center
-    justify-content: space-around
+    +flex-center()
+
     a
-      font-size: 6vw
-      height: 8vh
+      font-size: 5vw
+      height: 10vh
       width: 100%
-      display: flex
-      align-items: center
-      justify-content: center
       transition: ease 0.7s
+      +flex-center()
       +default()
       &.選択中
         +default(#000)
-        font-size: 10vw
+        font-size: 8vw
         transition: ease 0.7s
 
   main
@@ -79,9 +81,7 @@
       > h1
         height: 8vh
         outline: solid
-        display: flex
-        justify-content: center
-        align-items: center
+        +flex-center()
       > p
         padding: 1vh
         +default(#000,.2)
@@ -109,15 +109,10 @@
           display: none
         tr
           display: flex
-          flex-wrap: wrap
+          flex-direction: column
           &:first-child
             display: none
-          th,td
-            display: flex
-            justify-content: center
-            align-items: center
           th
-            width: 100%
             font-size: 10vw
             padding: 1vh
             border-top: solid #fff 1px
@@ -126,19 +121,17 @@
           td
             font-size: 5vw
             padding: 1vh 2%
-            text-align: left
+            +flex-center()
           .更新項目
-            width: 100%
+            font-size: 8vw
             +default($color:#000, $alpha:.6)
           .更新内容
-            width: 100%
+            font-size: 5vw
             +default($alpha:.6)
 
   footer
     background: linear-gradient(#00bbff,white,#00bbff)
-    display: flex
-    align-items: center
-    justify-content: center
+    +flex-center()
     height: 0
     width: 100%
     padding: 2.5vh 0

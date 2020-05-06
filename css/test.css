@@ -2,7 +2,7 @@
 @media screen and (orientation: portrait) {
   html {
     overflow-x: hidden;
-    scroll-padding-top: 8vh;
+    scroll-padding-top: 10vh;
     scroll-behavior: smooth;
   }
   html ::-webkit-scrollbar {
@@ -18,10 +18,12 @@
   body {
     background: -webkit-gradient(linear, left top, right top, from(#00aaff), color-stop(#fff), to(#00aaff));
     background: linear-gradient(90deg, #00aaff, #fff, #00aaff);
+    font-family: "HGS明朝E";
   }
   header > a {
     height: 10vh;
     width: 100%;
+    border-bottom: solid 1px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -31,7 +33,6 @@
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
-    border-bottom: solid 1px;
     color: #fff;
     background: rgba(0, 0, 0, 0.9);
   }
@@ -57,13 +58,16 @@
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    -ms-flex-pack: distribute;
-        justify-content: space-around;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
   nav a {
-    font-size: 6vw;
-    height: 8vh;
+    font-size: 5vw;
+    height: 10vh;
     width: 100%;
+    -webkit-transition: ease 0.7s;
+    transition: ease 0.7s;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -73,15 +77,13 @@
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
-    -webkit-transition: ease 0.7s;
-    transition: ease 0.7s;
     color: #fff;
     background: rgba(0, 0, 0, 0.9);
   }
   nav a.選択中 {
     color: #000;
     background: rgba(255, 255, 255, 0.9);
-    font-size: 10vw;
+    font-size: 8vw;
     -webkit-transition: ease 0.7s;
     transition: ease 0.7s;
   }
@@ -108,12 +110,12 @@
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
   main .ページ > p {
     padding: 1vh;
@@ -151,25 +153,15 @@
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
   main #ホーム > table tr:first-child {
     display: none;
   }
-  main #ホーム > table tr th, main #ホーム > table tr td {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-  }
   main #ホーム > table tr th {
-    width: 100%;
     font-size: 10vw;
     padding: 1vh;
     border-top: solid #fff 1px;
@@ -180,15 +172,23 @@
   main #ホーム > table tr td {
     font-size: 5vw;
     padding: 1vh 2%;
-    text-align: left;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
   main #ホーム > table tr .更新項目 {
-    width: 100%;
+    font-size: 8vw;
     color: #000;
     background: rgba(255, 255, 255, 0.6);
   }
   main #ホーム > table tr .更新内容 {
-    width: 100%;
+    font-size: 5vw;
     color: #fff;
     background: rgba(0, 0, 0, 0.6);
   }
