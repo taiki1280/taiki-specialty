@@ -11,8 +11,7 @@ html ::-webkit-scrollbar {
 }
 
 html * {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   padding: 0;
   margin: 0;
   text-decoration: none;
@@ -41,7 +40,6 @@ html * #welcome {
 
 html body {
   min-height: 100vh;
-  background: -webkit-gradient(linear, left top, right top, from(#00aaff), color-stop(#fff), to(#00aaff));
   background: linear-gradient(90deg, #00aaff, #fff, #00aaff);
   font-family: "HGS明朝E";
 }
@@ -50,15 +48,9 @@ html header > a {
   padding: 1vh 0;
   height: 10vh;
   border-bottom: solid 1px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  align-items: center;
+  justify-content: center;
   color: #fff;
   background: rgba(0, 0, 0, 0.9);
 }
@@ -72,7 +64,6 @@ html header > a div {
 }
 
 html header > a h1 {
-  -webkit-transition: ease 0.7s;
   transition: ease 0.7s;
   font-size: 8vmin;
 }
@@ -82,50 +73,32 @@ html nav {
   position: -webkit-sticky;
   position: sticky;
   top: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  align-items: center;
+  justify-content: center;
 }
 
 html nav a {
   cursor: pointer;
   font-size: 6vmin;
   height: 10vh;
-  -webkit-transition: ease 0.7s;
   transition: ease 0.7s;
   padding: 1vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  align-items: center;
+  justify-content: center;
   color: #fff;
   background: rgba(0, 0, 0, 0.9);
-  -webkit-box-flex: 2;
-      -ms-flex: 2;
-          flex: 2;
+  flex: 2;
   border-bottom: solid 1px;
 }
 
 html nav a.選択中 {
   color: #000;
   background: rgba(255, 255, 255, 0.9);
-  -webkit-transition: ease 0.7s;
   transition: ease 0.7s;
   font-size: 10vmin;
-  -webkit-box-flex: 3;
-      -ms-flex: 3;
-          flex: 3;
+  flex: 3;
   border-bottom: solid 1px;
 }
 
@@ -144,7 +117,6 @@ html main .ページ {
 html main .ページ.現在表示中 {
   display: block;
   height: auto;
-  -webkit-transition: ease opacity 0.8s 0.2s;
   transition: ease opacity 0.8s 0.2s;
   opacity: 1;
 }
@@ -152,15 +124,9 @@ html main .ページ.現在表示中 {
 html main .ページ.現在表示中 h1 {
   height: 8vh;
   outline: solid;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  align-items: center;
+  justify-content: center;
 }
 
 html main .ページ.現在表示中 p {
@@ -204,74 +170,62 @@ html main #ホーム > table caption {
 }
 
 html main #ホーム > table tr {
-  display: -webkit-box;
-  display: -ms-flexbox;
+  border-right: solid 1px;
+  border-left: solid 1px;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-wrap: wrap;
 }
 
 html main #ホーム > table tr:first-child {
   display: none;
 }
 
-html main #ホーム > table tr th {
+html main #ホーム > table tr th, html main #ホーム > table tr td {
   padding: 1vh;
-  font-size: 10vmin;
-  border-top: solid #fff 1px;
-  border-bottom: solid #000 1px;
-  color: #000;
-  background: rgba(255, 255, 255, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-html main #ホーム > table tr td {
-  font-size: 5vmin;
-  padding: 1vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+html main #ホーム > table tr th {
+  color: #000;
+  background: rgba(255, 255, 255, 0.6);
+  border-top: solid #000 1px;
+  border-bottom: solid #000 1px;
+  font-size: 6vmin;
+  width: 100%;
 }
 
 html main #ホーム > table tr .更新項目 {
-  font-size: 8vmin;
+  font-size: 4vmin;
   color: #000;
   background: rgba(255, 255, 255, 0.6);
+  flex: 2;
 }
 
 html main #ホーム > table tr .更新内容 {
-  font-size: 5vmin;
+  font-size: 4vmin;
   color: #fff;
   background: rgba(0, 0, 0, 0.6);
+  flex: 8;
+  justify-content: left;
+}
+
+html main #ホーム > table tr:last-child {
+  border-bottom: solid 1px;
 }
 
 html footer {
-  background: -webkit-gradient(linear, left top, left bottom, from(#00bbff), color-stop(white), to(#00bbff));
   background: linear-gradient(#00bbff, white, #00bbff);
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  align-items: center;
+  justify-content: center;
   height: 0;
   width: 100%;
   padding: 2.5vh 0;
   margin-top: 2.5vh;
   margin-top: 5vh;
   position: fixed;
-  position: -webkit-sticky;
   position: sticky;
   bottom: 0;
 }
-/*# sourceMappingURL=test.css.map */

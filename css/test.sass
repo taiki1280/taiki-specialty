@@ -121,26 +121,33 @@ html
         caption
           display: none
         tr
+          border-right: solid 1px
+          border-left: solid 1px
           display: flex
-          flex-direction: column
+          flex-wrap: wrap
           &:first-child
             display: none
-          th
-            padding: 1vh
-            font-size: 10vmin
-            border-top: solid #fff 1px
-            border-bottom: solid #000 1px
-            +default($color:#000, $alpha:.6)
-          td
-            font-size: 5vmin
+          th,td
             padding: 1vh
             +flex-center()
-          .更新項目
-            font-size: 8vmin
+          th
             +default($color:#000, $alpha:.6)
+            border-top: solid #000 1px
+            border-bottom: solid #000 1px
+            font-size: 6vmin
+            width: 100%
+              
+          .更新項目
+            font-size: 4vmin
+            +default($color:#000, $alpha:.6)
+            flex: 2
           .更新内容
-            font-size: 5vmin
+            font-size: 4vmin
             +default($alpha:.6)
+            flex: 8
+            justify-content: left
+          &:last-child
+            border-bottom: solid 1px
 
   footer
     background: linear-gradient(#00bbff,white,#00bbff)
