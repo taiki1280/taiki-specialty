@@ -7,7 +7,13 @@
   align-items: center
   justify-content: center
 
-// @media screen and (orientation: portrait )
+@font-face
+  font-family: "HG 教科書体"
+  src: url("../font/win10/HGRKK.TTC")
+@font-face
+  font-family: "HG 明朝E"
+  src: url("../font/win10/HGRME.TTC")
+
 html
   overflow-x: hidden
   scroll-padding-top: 10vh
@@ -30,13 +36,18 @@ html
       font-size: 5.5vmin
     p
       font-size: 5vmin
+    small
+      font-size: 3vmin
+      font-family: "HG 明朝E"
+      font-weight: normal
     #welcome
       font-size: 5.5vmin
 
   body
     min-height: 100vh
     background: linear-gradient(90deg,#00aaff,#fff,#00aaff)
-    font-family: "HGS明朝E"
+    font-family: 'HG 教科書体', sans-serif
+    font-weight: bold
 
   header
     > a
@@ -52,6 +63,8 @@ html
         background-size: contain
         background-repeat: no-repeat
       h1
+        font-family: 'HG 明朝E'
+        font-weight: normal
         transition: ease 0.7s
         font-size: 8vmin
 
@@ -135,7 +148,6 @@ html
             border-bottom: solid #000 1px
             font-size: 6vmin
             width: 100%
-              
           .更新項目
             font-size: 4vmin
             +default($color:#000, $alpha:.6)
