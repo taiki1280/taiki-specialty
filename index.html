@@ -32,16 +32,18 @@
       <div></div>
     </a>
   </header>
-  <nav>
+  <nav id="nav">
     <a class="タブ" href="#ホーム">ホーム</a>
     <!-- <a class="タブ">学校</a> -->
     <!-- <a class="タブ">趣味</a> -->
     <!-- <a class="タブ">意見</a> -->
     <a class="タブ" href="#Twitter">Twitter</a>
     <!-- <a class="タブ">テスト</a> -->
+    <!-- {{test}} -->
   </nav>
   <main>
-    <div id="welcome">ありがとう☆</div>
+    <div id="welcome"><br>{{visited_cnt}}回目の訪問ありがとう☆</div>
+    <!-- <div id="welcome">ありがとう☆</div> -->
     <div class="ページ" id="ホーム">
       <h1>ホーム</h1>
       <div>
@@ -97,6 +99,9 @@
   <footer>
     <small>presented by Taiki&copy;</small>
   </footer>
+  <script src="js/vue/vue.js"></script>
+  <script src="js/vue/vue-cookies.js"></script>
+  <script src="js/test.js"></script>
 </body>
 
 </html>
