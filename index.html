@@ -10,11 +10,11 @@
   <link rel="stylesheet" href="css/style.sass"> -->
   <link rel="stylesheet" href="css/test.css">
   <link rel="stylesheet" href="css/test.sass">
-  <script src="js/jquery.js"></script>
-  <script src="js/jquery.cookie.js"></script>
-  <script src="js/jquery.csv.min.js"></script>
-  <script src="js/main.js"></script>
-  <script src="js/tab.js"></script>
+  <!-- <script src="js/jquery.js"></script> -->
+  <!-- <script src="js/jquery.cookie.js"></script> -->
+  <!-- <script src="js/jquery.csv.min.js"></script> -->
+  <!-- <script src="js/main.js"></script> -->
+  <!-- <script src="js/tab.js"></script> -->
   <title>たいきのほーむぺーじ</title>
   <meta name="keywords" content="たいき,ほーむぺーじ,ホームページ,消滅都市,ほぉむぺぇじ">
   <meta name="description"
@@ -28,24 +28,18 @@
   <header>
     <a href="index.html">
       <div></div>
-      <h1>たいきのほーむぺーじ</h1>
+      <h1>たいきのほ～むぺ～じ</h1>
       <div></div>
     </a>
   </header>
   <nav id="nav">
-    <a class="タブ" href="#ホーム">ホーム</a>
-    <!-- <a class="タブ">学校</a> -->
-    <!-- <a class="タブ">趣味</a> -->
-    <!-- <a class="タブ">意見</a> -->
-    <a class="タブ" href="#Twitter">Twitter</a>
-    <!-- <a class="タブ">テスト</a> -->
-    <!-- {{test}} -->
+    <a v-for="menu in menus" :class="{選択中: now_tab === menu}" @click=switch_tab(menu)>{{menu}}</a>
   </nav>
-  <main>
-    <div id="welcome"><br>{{visited_cnt}}回目の訪問ありがとう☆</div>
+  <main id="main">
+    <div id="welcome">{{visited_cnt}}回目の訪問ありがとう☆</div>
     <!-- <div id="welcome">ありがとう☆</div> -->
-    <div class="ページ" id="ホーム">
-      <h1>ホーム</h1>
+    <div class="ページ" :class="{現在表示中: now_tab === 'ホーム'}" id="ホーム">
+      <h1>{{now_tab}}</h1>
       <div>
         <h2>たいきのホームページ</h2>
         <p>
@@ -79,8 +73,8 @@
       <p>俺に対する意見をバンバン書いてもらおうとしてる所です。</p>
       <p>いずれフォームを置こうと考えています。</p>
     </div> -->
-    <div class="ページ" id="Twitter">
-      <h1>Twitter</h1>
+    <div class="ページ" :class="{現在表示中: now_tab === 'Twitter'}" id="Twitter">
+      <h1>{{now_tab}}</h1>
       <div>
         <h2>俺のタイムライン</h2>
         <a class="twitter-timeline" data-lang="ja" width="100%" data-theme="dark"
