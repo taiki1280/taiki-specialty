@@ -55,3 +55,51 @@ let main = new Vue({
     axios.get("json/update_content.json").then(response => (this.values = response.data.reverse()))
   }
 })
+
+// jQueryでスワイプの制御（Vueの変数を変える）
+jQuery(function () {
+  // スワイプされた時
+  const $body = $('body')
+  $body.on('touchstart', onTouchStart); //指が触れたか検知
+  $body.on('touchmove', onTouchMove); //指が動いたか検知
+  $body.on('touchend', onTouchEnd); //指が離れたか検知
+  var direction, position;
+
+  //横方向の座標を取得
+  function getPosition(event) {
+    return event.originalEvent.touches[0].pageX;
+  }
+
+  //スワイプ開始時の横方向の座標を格納
+  function onTouchStart(event) {
+    position = getPosition(event);
+    direction = ''; //一度リセットする
+  }
+
+  //スワイプの方向（left／right）を取得
+  function onTouchMove(event) {
+    // 70px以上移動しなければスワイプと判断しない
+    if (position - getPosition(event) > 70) {
+      direction = 'left'; //左と検知
+    } else if (position - getPosition(event) < -70) {
+      direction = 'right'; //右と検知
+    }
+  }
+
+  function onTouchEnd(event) {
+    const min = 0
+    const max = nav.menus.length - 1
+    // タブのインデックスを取得
+    let now_index = nav.menus.indexOf(nav.now_tab)
+    if (direction == "left")
+      now_index--
+    else if (direction == "right")
+      now_index++
+    if (now_index < min)
+      now_index = max
+    else if (now_index > max)
+      now_index = min
+    nav.switch_tab(nav.menus[now_index])
+  }
+})
+// nav.switch_tab(nav.menu.indexOf(nav.now_tab))
