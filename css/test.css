@@ -50,28 +50,24 @@ html * small {
   font-weight: normal;
 }
 
-html * #welcome {
-  font-size: 5.5vmin;
-}
-
 html body {
   min-height: 100vh;
   background: linear-gradient(90deg, #00aaff, #fff, #00aaff);
-  font-family: 'HG 教科書体', sans-serif;
+  font-family: 'HG 教科書体';
   font-weight: bold;
 }
 
-html header > a {
+html body header > a {
   height: 10vh;
   border-bottom: solid 1px;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.9);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #fff;
-  background: rgba(0, 0, 0, 0.9);
 }
 
-html header > a div {
+html body header > a div {
   height: 7vmin;
   width: 7vmin;
   margin: 1vmin;
@@ -80,14 +76,14 @@ html header > a div {
   background-repeat: no-repeat;
 }
 
-html header > a h1 {
+html body header > a h1 {
   font-family: 'HG 明朝E';
   font-weight: normal;
   transition: ease 0.7s;
   font-size: 8vmin;
 }
 
-html nav {
+html body nav {
   z-index: 1;
   position: -webkit-sticky;
   position: sticky;
@@ -97,21 +93,21 @@ html nav {
   justify-content: center;
 }
 
-html nav a {
+html body nav a {
   cursor: pointer;
   font-size: 6vmin;
   height: 10vh;
   transition: ease 0.7s;
+  flex: 2;
+  border-bottom: solid 1px;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.9);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #fff;
-  background: rgba(0, 0, 0, 0.9);
-  flex: 2;
-  border-bottom: solid 1px;
 }
 
-html nav a.選択中 {
+html body nav a.選択中 {
   color: #000;
   background: rgba(255, 255, 255, 0.9);
   transition: ease 0.7s;
@@ -120,26 +116,27 @@ html nav a.選択中 {
   border-bottom: solid 1px;
 }
 
-html main #welcome {
+html body main #welcome {
   text-align: center;
   margin: 2.5vh;
+  font-size: 5.5vmin;
 }
 
-html main .ページ {
+html body main .ページ {
   height: 0;
   margin: 0 5vmin;
   opacity: 0;
   overflow: hidden;
 }
 
-html main .ページ.現在表示中 {
+html body main .ページ.現在表示中 {
   display: block;
   height: auto;
   transition: ease opacity 0.8s 0.2s;
   opacity: 1;
 }
 
-html main .ページ.現在表示中 h1 {
+html body main .ページ.現在表示中 h1 {
   height: 8vh;
   outline: solid;
   display: flex;
@@ -147,65 +144,66 @@ html main .ページ.現在表示中 h1 {
   justify-content: center;
 }
 
-html main .ページ.現在表示中 p {
+html body main .ページ.現在表示中 p {
   padding: 1vh;
   color: #000;
   background: rgba(255, 255, 255, 0.2);
 }
 
-html main .ページ.現在表示中 h1, html main .ページ.現在表示中 h2, html main .ページ.現在表示中 h3 {
+html body main .ページ.現在表示中 h1, html body main .ページ.現在表示中 h2, html body main .ページ.現在表示中 h3 {
   margin: 1vh 0;
   padding: 1vh;
   color: #000;
   background: rgba(255, 255, 255, 0.2);
 }
 
-html main .ページ.現在表示中 h2, html main .ページ.現在表示中 h3 {
+html body main .ページ.現在表示中 h2, html body main .ページ.現在表示中 h3 {
   border-bottom: solid 1px;
   display: inline-block;
 }
 
-html main .ページ.現在表示中 > div {
+html body main .ページ.現在表示中 > div {
   margin: 3vh 0;
 }
 
-html main #ホーム h2, html main #ホーム p {
+html body main #ホーム p {
   border: solid 1px #fff;
 }
 
-html main #ホーム h2 {
+html body main #ホーム h2 {
+  border: solid 1px #fff;
   border-bottom: none;
   margin: 0;
 }
 
-html main #ホーム > table {
+html body main #ホーム > table {
   border-collapse: collapse;
   width: 100%;
 }
 
-html main #ホーム > table caption {
+html body main #ホーム > table caption {
   display: none;
 }
 
-html main #ホーム > table tr {
+html body main #ホーム > table tr {
   border-right: solid 1px;
   border-left: solid 1px;
   display: flex;
   flex-wrap: wrap;
 }
 
-html main #ホーム > table tr:first-child {
+html body main #ホーム > table tr:first-child {
   display: none;
 }
 
-html main #ホーム > table tr th, html main #ホーム > table tr td {
+html body main #ホーム > table tr th, html body main #ホーム > table tr td {
   padding: 1vh;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-html main #ホーム > table tr th {
+html body main #ホーム > table tr th {
   color: #000;
   background: rgba(255, 255, 255, 0.6);
   border-top: solid #000 1px;
@@ -214,14 +212,14 @@ html main #ホーム > table tr th {
   width: 100%;
 }
 
-html main #ホーム > table tr .更新項目 {
+html body main #ホーム > table tr .更新項目 {
   font-size: 4vmin;
   color: #000;
   background: rgba(255, 255, 255, 0.6);
   flex: 2;
 }
 
-html main #ホーム > table tr .更新内容 {
+html body main #ホーム > table tr .更新内容 {
   font-size: 4vmin;
   color: #fff;
   background: rgba(0, 0, 0, 0.6);
@@ -229,15 +227,12 @@ html main #ホーム > table tr .更新内容 {
   justify-content: left;
 }
 
-html main #ホーム > table tr:last-child {
+html body main #ホーム > table tr:last-child {
   border-bottom: solid 1px;
 }
 
-html footer {
+html body footer {
   background: linear-gradient(#00bbff, white, #00bbff);
-  display: flex;
-  align-items: center;
-  justify-content: center;
   height: 0;
   width: 100%;
   padding: 2.5vh 0;
@@ -246,4 +241,7 @@ html footer {
   position: fixed;
   position: sticky;
   bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

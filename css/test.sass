@@ -40,134 +40,131 @@ html
       font-size: 3vmin
       font-family: "HG 明朝E"
       font-weight: normal
-    #welcome
-      font-size: 5.5vmin
 
   body
     min-height: 100vh
     background: linear-gradient(90deg,#00aaff,#fff,#00aaff)
-    font-family: 'HG 教科書体', sans-serif
+    font-family: 'HG 教科書体'
     font-weight: bold
-
-  header
-    > a
-      height: 10vh
-      border-bottom: solid 1px
-      +flex-center()
-      +default()
-      div
-        height: 7vmin
-        width: 7vmin
-        margin: 1vmin
-        background: url(../images/球体.png)
-        background-size: contain
-        background-repeat: no-repeat
-      h1
-        font-family: 'HG 明朝E'
-        font-weight: normal
-        transition: ease 0.7s
-        font-size: 8vmin
-
-  nav
-    z-index: 1
-    position: -webkit-sticky
-    position: sticky
-    top: 0
-    +flex-center()
-    a
-      cursor: pointer
-      font-size: 6vmin
-      height: 10vh
-      transition: ease 0.7s
-      +flex-center()
-      +default()
-      flex: 2
-      border-bottom: solid 1px
-      &.選択中
-        +default(#000)
-        transition: ease 0.7s
-        font-size: 10vmin
-        flex: 3
+    header
+      > a
+        height: 10vh
         border-bottom: solid 1px
-
-  main
-    #welcome
-      text-align: center
-      margin: 2.5vh
-    .ページ
-      height: 0
-      margin: 0 5vmin
-      opacity: 0
-      overflow: hidden
-      &.現在表示中
-        display: block
-        height: auto
-        transition: ease opacity 0.8s 0.2s
-        opacity: 1
+        +default()
+        +flex-center()
+        div
+          height: 7vmin
+          width: 7vmin
+          margin: 1vmin
+          background: url(../images/球体.png)
+          background-size: contain
+          background-repeat: no-repeat
         h1
-          height: 8vh
-          outline: solid
-          +flex-center()
-        p
-          padding: 1vh
-          +default(#000,.2)
-        h1,h2,h3
-          margin: 1vh 0
-          padding: 1vh
-          +default(#000,.2)
-        h2,h3
+          font-family: 'HG 明朝E'
+          font-weight: normal
+          transition: ease 0.7s
+          font-size: 8vmin
+    nav
+      z-index: 1
+      position: -webkit-sticky
+      position: sticky
+      top: 0
+      +flex-center()
+      a
+        cursor: pointer
+        font-size: 6vmin
+        height: 10vh
+        transition: ease 0.7s
+        flex: 2
+        border-bottom: solid 1px
+        +default()
+        +flex-center()
+        &.選択中
+          +default(#000)
+          transition: ease 0.7s
+          font-size: 10vmin
+          flex: 3
           border-bottom: solid 1px
-          display: inline-block
-        > div
-          margin: 3vh 0
 
-    #ホーム
-      h2, p
-        border: solid 1px #fff
-      h2
-        border-bottom: none
-        margin: 0
-      > table
-        border-collapse: collapse
-        width: 100%
-        caption
-          display: none
-        tr
-          border-right: solid 1px
-          border-left: solid 1px
-          display: flex
-          flex-wrap: wrap
-          &:first-child
-            display: none
-          th,td
-            padding: 1vh
+    main
+      #welcome
+        text-align: center
+        margin: 2.5vh
+        font-size: 5.5vmin
+      .ページ
+        height: 0
+        margin: 0 5vmin
+        opacity: 0
+        overflow: hidden
+        &.現在表示中
+          display: block
+          height: auto
+          transition: ease opacity 0.8s 0.2s
+          opacity: 1
+          h1
+            height: 8vh
+            outline: solid
             +flex-center()
-          th
-            +default($color:#000, $alpha:.6)
-            border-top: solid #000 1px
-            border-bottom: solid #000 1px
-            font-size: 6vmin
-            width: 100%
-          .更新項目
-            font-size: 4vmin
-            +default($color:#000, $alpha:.6)
-            flex: 2
-          .更新内容
-            font-size: 4vmin
-            +default($alpha:.6)
-            flex: 8
-            justify-content: left
-          &:last-child
+          p
+            padding: 1vh
+            +default(#000,.2)
+          h1,h2,h3
+            margin: 1vh 0
+            padding: 1vh
+            +default(#000,.2)
+          h2,h3
             border-bottom: solid 1px
+            display: inline-block
+          > div
+            margin: 3vh 0
+      #ホーム
+        p
+          border: solid 1px #fff
+        h2
+          border: solid 1px #fff
+          border-bottom: none
+          margin: 0
+        > table
+          border-collapse: collapse
+          width: 100%
+          caption
+            display: none
+          tr
+            border-right: solid 1px
+            border-left: solid 1px
+            display: flex
+            flex-wrap: wrap
+            &:first-child
+              display: none
+            th,td
+              padding: 1vh
+              +flex-center()
+            th
+              +default($color:#000, $alpha:.6)
+              border-top: solid #000 1px
+              border-bottom: solid #000 1px
+              font-size: 6vmin
+              width: 100%
+            .更新項目
+              font-size: 4vmin
+              +default($color:#000, $alpha:.6)
+              flex: 2
+            .更新内容
+              font-size: 4vmin
+              +default($alpha:.6)
+              flex: 8
+              justify-content: left
+            &:last-child
+              border-bottom: solid 1px
 
-  footer
-    background: linear-gradient(#00bbff,white,#00bbff)
-    +flex-center()
-    height: 0
-    width: 100%
-    padding: 2.5vh 0
-    margin-top: 2.5vh
-    margin-top: 5vh
-    position: fixed
-    position: sticky
-    bottom: 0
+    footer
+      background: linear-gradient(#00bbff,white,#00bbff)
+      height: 0
+      width: 100%
+      padding: 2.5vh 0
+      margin-top: 2.5vh
+      margin-top: 5vh
+      position: fixed
+      position: sticky
+      bottom: 0
+      +flex-center()

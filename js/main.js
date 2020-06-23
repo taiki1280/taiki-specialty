@@ -1,91 +1,57 @@
-jQuery(function () {
-  //訪問回数の処理
-  var visit_count = $.cookie("visit_count")
-  if (visit_count == undefined) {
-    visit_count = 0
-  }
-  visit_count++
-  $.cookie("visit_count", visit_count, { expires: 1 })
-  $("#welcome").prepend(visit_count + "回目の訪問")
+// 訪問回数
+new Vue({
+  el: '#welcome',
+  data: {
+    visited_cnt: 0
+  },
+  created: function () {
+    // ローカルストレージに保存する
+    // データが存在しなかった時
+    //   if (!localStorage.visited_cnt)
+    //     localStorage.visited_cnt = 0
+    //   // localStorageはString型でしか保存できないため受け取り後キャストしてインクリメント
+    //   localStorage.visited_cnt = parseFloat(localStorage.visited_cnt) + 1
+    //   this.visited_cnt = `${localStorage.visited_cnt}回目の`;
+    // }
 
-  // CSVファイルの読み込み
-  var csvfile = 'csv/update_content.csv'
-  $.get(csvfile, readCsv, 'text')
-  // テーブルタグの日付同じ部分を結合
-  /* 
-  「注意」
-  テーブルデータの中身を一部削除するため、
-  列を複数指定する際には後ろの列から順番に指定。
-   */
-  $("#ホーム").delay(100).queue(function () {
-    $("#ホーム td:nth-child(2)").addClass("更新項目")
-    $("#ホーム td:nth-child(3)").addClass("更新内容")
-    set_rowSpan($("th")).dequeue()
-    // set_rowSpan($("td:nth-child(2)")).dequeue()
-  })
+    // Cookieに保存する
+    this.visited_cnt = this.$cookies.get("visited_cnt")
+    if (this.visited_cnt === undefined)
+      this.$cookies.set("visited_cnt", 0)
+    this.visited_cnt++;
+    this.$cookies.set("visited_cnt", this.visited_cnt)
+  }
 })
 
-// CSV読み込みメソッド
-function readCsv(data) {
-  var target = '#csv-body'
-  var csv = $.csv.toArrays(data)
-  var insert = ''
-  $(csv).each(function () {
-    if (this.length > 0) {
-      insert += '<tr>'
-      $(this).each(function (i) {
-        if (
-          this == "日付" ||
-          this == "更新項目" ||
-          this == "更新内容" ||
-          i == 0
-        ) {
-          insert += '<th>' + this + '</th>'
-        } else {
-          insert += '<td>' + this + '</td>'
-        }
-      })
-      insert += '</tr>'
-    }
-  })
-  $(target).append(insert)
-}
+// タブの切り替え
+let nav = new Vue({
+  el: "#nav",
+  data: {
+    now_tab: "ホーム",
+    // menus: ["ホーム", "学校", "趣味", "意見", "Twitter",]
+    menus: ["ホーム", "Twitter"]
+  },
+  mounted: function () {
+    this.now_tab = this.$cookies.get("now_tab")
+    if (this.now_tab === undefined)
+      this.$cookies.set("now_tab", "ホーム")
+  },
+  methods: {
+    switch_tab: function (menu) {
+      this.$cookies.set("now_tab", menu)
+      this.now_tab = menu
+      main.now_tab = menu
+    },
+  }
+})
 
-// 上から順に縦に見て、内容が同じなら結合するメソッド
-function set_rowSpan($date) {
-  var i = 0
-  var duplication_chara_array = []
-  var duplication_index_array = []
-  var now = ""
-  var cnt = 0
-  var dates = []
-  // 一列目にクラスを付与。
-  $date.addClass("date")
-  $date.each(function () {
-    dates.push($(this).text())
-  })
-  for (const i in dates) {
-    const v = dates[i];
-    if (now == v) {
-      cnt++
-    } else {
-      now = v
-      $date.eq(i - cnt).attr("rowSpan", cnt)
-      cnt = 1
-      // 一回一回削除
-      duplication_chara_array = []
-    }
-    if (duplication_chara_array.indexOf(v) == -1) {
-      duplication_chara_array.push(v)
-    } else {
-      duplication_index_array.push(i)
-    }
+let main = new Vue({
+  el: "#main",
+  data: {
+    now_tab: "ホーム",
+    values: ""
+  },
+  created() {
+    axios.get("json/update_content.json").then(response => (this.values = response.data.reverse()))
   }
-  // 最後の要素にrowSpanを付与
-  $date.eq(i - cnt).attr("rowSpan", cnt)
-  // 重複がある物は最初以外削除。
-  for (var i = duplication_index_array.length; i >= 0; i--) {
-    const element = duplication_index_array[i];
-    $date.eq(element).remove()
-  }
-}
+})

@@ -10214,11 +10214,12 @@
   /* istanbul ignore next */
   setTimeout(function () {
     if (config.devtools) {
-      if (devtools) {
+      if (devtools)
         devtools.emit('init', Vue);
-      } else if ('development' !== 'production' && inBrowser && /Chrome\/\d+/.test(window.navigator.userAgent)) {
-        console.log('Download the Vue Devtools for a better development experience:\n' + 'https://github.com/vuejs/vue-devtools');
-      }
+      // vueのデベロッパツールが入ってない人に促すメッセージを無視
+      // } else if ('development' !== 'production' && inBrowser && /Chrome\/\d+/.test(window.navigator.userAgent)) {
+      //   console.log('Download the Vue Devtools for a better development experience:\n' + 'https://github.com/vuejs/vue-devtools');
+      // }
     }
   }, 0);
 
