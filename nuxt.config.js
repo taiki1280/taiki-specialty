@@ -57,5 +57,11 @@ export default {
   ** See https://nuxtjs.org/api/configuration-build/
   */
   build: {
+  },
+  generate: {
+    dir: 'docs'
+  },
+  router: {
+    base: process.env.NODE_ENV === 'production' ? '/taiki-s-nuxt.js/' : '/'
   }
 }
