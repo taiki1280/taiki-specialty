@@ -21,11 +21,10 @@
   </svg>
 </template>
 
-<style lang="sass">
+<style lang="stylus">
 .NuxtLogo
-  animation: 1s appear
-
+  animation 1s appear
 @keyframes appear
   0%
-    opacity: 0
+    opacity 0
 </style>
