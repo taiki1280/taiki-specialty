@@ -56,7 +56,8 @@ export default {
   ],
   styleResources: {
     stylus: [
-      '~/assets/stylus/common.styl'
+      '~/assets/stylus/common.styl',
+      '~/assets/stylus/mixin.styl'
     ]
   },
   /*

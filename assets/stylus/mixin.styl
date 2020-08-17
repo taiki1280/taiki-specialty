@@ -1,0 +1,15 @@
+li_size(diver)
+  num = (100vmin / diver)
+  width num * 0.8
+  height num * 0.8
+  font-size num * 0.3
+  @media screen and (orientation portrait)
+    width num
+    height num
+flex(option = 'center')
+  display flex
+  align-items center
+  if (option == 'center')
+    justify-content center
+  else if (option == 'space-evenly')
+    justify-content space-evenly
