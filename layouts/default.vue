@@ -4,8 +4,7 @@ div
   Nav
   main
     Title
-    transition(name="page")
-      Nuxt
+    Nuxt
 </template>
 
 <style lang="stylus">
@@ -16,10 +15,4 @@ main
   flex-direction column
   margin auto
   // background #ffffff
-// ページ遷移アニメーション
-.page-enter
-  opacity 0
-.page-enter-active
-  transition opacity 1s
-
 </style>

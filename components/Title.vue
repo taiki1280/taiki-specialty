@@ -1,16 +1,23 @@
 <template lang="pug">
-h1 {{ title }}
+transition(name="page")
+  div
+    h1 
+      div {{ title }}
 </template>
 
 <style lang="stylus" scoped>
 h1
   flex()
-  color #000
-  background rgba(#fff 0.2)
+  default(0.2, #000)
   margin 1vh 0
   height 8vh
-  border-top solid 2px
-  border-bottom solid 2px
+  border solid
+  border-width 2px 0
+  div
+    animation 1s appear
+    @keyframes appear
+      0%
+        opacity 0
 </style>
 
 

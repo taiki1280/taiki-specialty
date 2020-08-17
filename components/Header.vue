@@ -12,17 +12,12 @@ a
   color #fff
   background rgba(#000, 0.9)
   height 10vh
-  border-bottom: solid 1px
+  border-bottom solid 1px
   div
     flex()
-    width 7vmin
-    height @width
     margin 1vmin
     img
-      width 100%
-      height @width
+      wh(7vmin)
   h1
     font-size 8vmin
-    font-weight normal
-    transition ease 0.7s
 </style>

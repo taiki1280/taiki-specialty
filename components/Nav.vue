@@ -1,31 +1,24 @@
 <template lang="pug">
 nav
-  nuxt-link(
-    v-for="(item, key) in json",
-    :key="key",
-    :to="item.link",
-    :class="{ selected: item.link == $route.path }"
-  ) {{ item.title }}
+  nuxt-link(v-for="(item, key) in json", :key="key", :to="item.link") {{ item.title }}
 </template>
 
 <style lang="stylus" scoped>
-default(color)
-  color color
-  background rgba(invert(color) 0.9)
+
 nav
   height 10vh
   flex()
   a
-    default(#fff)
-    font-size 6vmin
-    height 10vh
-    transition ease 0.7s
-    flex-grow 1
+    default(0.9)
     border-bottom solid 1px
+    transition ease 0.7s
+    height 10vh
+    flex-grow 1
     flex()
-.selected
-  default(#000)
-  flex-grow 3
+.nuxt-link-exact-active
+  font-size 6vmin
+  default(0.9, #000)
+  flex-grow 1.5
 </style>
 
 <script>
