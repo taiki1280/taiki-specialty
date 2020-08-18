@@ -1,9 +1,9 @@
 <template lang="pug">
 header
   nuxt-link(to="/") 
-    div: img(src="/img/球体.png", alt="表示できませんでした。")
+    div: img(src="img/球体.png", alt="表示できませんでした。")
     h1 たいきのほ～むぺ～じ
-    div: img(src="/img/球体.png", alt="表示できませんでした。")
+    div: img(src="img/球体.png", alt="表示できませんでした。")
 </template>
 
 <style lang="stylus" scoped>

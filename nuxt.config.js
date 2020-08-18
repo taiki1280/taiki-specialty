@@ -25,7 +25,7 @@ export default {
       { name: 'google-site-verification', content: 'baCbnYsLuIFhP8Gnd7Rx_jy1gc4gB_jvis_aiE_MZP8' },
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: 'favicon.ico' }
     ]
   },
   /*
