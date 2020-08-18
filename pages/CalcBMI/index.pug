@@ -1,0 +1,28 @@
+#main
+  div
+    table.input(border="1")
+      tr
+        th(scope="row") 身長を入力してください(cm)
+        td
+          input(type="number" min="0" step="0.1" v-model="Weight")
+          | cm
+      tr
+        th(scope="row") 体重を入力してください(kg)
+        td
+          input(type="number" min="0" step="0.1" v-model="Height")
+          | kg
+  div(v-if="Height * Weight > 0")
+    div
+      p 入力ありがとうございました。
+      p 以下結果です。
+      p BMI値と適性体重は小数点第二位を四捨五入済み。
+    div
+      table(border="1")
+        caption
+        tr(v-for="(value, i) in th_col", :key="i")
+          th(scope="row") {{ value }}
+          td(v-if="i === 0") 約{{ Math.round(CalcBMI * 10) / 10 }}
+          td(v-if="i === 1") {{ JudgeObesityJP }}
+          td(v-if="i === 2") {{ JudgeObesityWHO }}
+          td(v-if="i === 3") 約{{ Math.round(CalcSuitableWeight * 10) / 10 }}kg
+          td(v-if="i === 4") 約{{ Math.round(CalcDistanceSuitableWeight * 10) / 10 }}kg
