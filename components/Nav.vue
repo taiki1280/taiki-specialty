@@ -11,16 +11,17 @@ nav
     default(0.9)
     border-bottom solid 1px
     transition ease 0.7s
-    padding 0 1vw
-    font-size 3vmin
+    padding 0 0.5vw
     flex-grow 1
+    min-width 6em
     height 10vh
     flex()
+    font-size 100%
     @media screen and (orientation portrait)
       height 5vh
 .nuxt-link-exact-active
-  flex-grow 1.5
-  font-size 6vmin
+  font-size 150%
+  flex-grow 2
   default(0.9, #000)
 </style>
 

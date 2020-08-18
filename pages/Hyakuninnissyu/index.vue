@@ -60,6 +60,8 @@ export default {
     padding 0
     span
       color red
+    @media screen and (orientation portrait)
+      font-size 3.6vw
   > div
     display flex
     flex-direction column
@@ -69,22 +71,16 @@ export default {
       img
         width 100%
     @media screen and (orientation landscape)
-      width 50%
-      display flex
-      flex-wrap wrap
-      flex 1
-      margin auto
-      // background: black
       > div
         flex-direction column
         display flex
         flex-wrap wrap
         justify-content center
-        height 20vh
+        height 30vh
         width 100%
-        img
-          height 20vh
-          margin auto
+      img
+        height 20vh
+        margin auto
     > div
       p:nth-of-type(3)
         text-align right

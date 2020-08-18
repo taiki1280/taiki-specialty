@@ -17,14 +17,13 @@
         rel="noopener noreferrer"
       ) Twitter
   .container
-    div json一つ目　{{ json[0] }}
-    ul(
-      v-for="(value, key) in json",
-    )
-      //- v-if="key > 0 && json[key - 1].日付 != value.日付"
-      li {{ value.日付 }}
-      li {{ value.更新項目 }}
-      li {{ value.更新内容 }}
+    table.update_content
+      tbody
+        tr(v-for="(value, i) in json")
+          //- 最初の日付と値がひとつ前と同じでないとき実行
+          th(scope="col", v-if="i == 0 || value.日付 != json[i - 1].日付") {{ value.日付 }}
+          td {{ value.更新項目 }}
+          td {{ value.更新内容 }}
 </template>
 
 <style lang="stylus" scoped>
@@ -60,13 +59,41 @@
     button(grey)
   .cyan
     button(cyan)
+.update_content
+  border-collapse collapse
+  width 100%
+  tr
+    border-right solid 1px
+    border-left solid 1px
+    display flex
+    flex-wrap wrap
+    &:last-child
+      border-bottom solid 1px
+  th, td
+    padding 1vh
+    flex()
+  th
+    default(0.6, #000)
+    border-top solid #000 1px
+    border-bottom solid #000 1px
+    font-size 6vmin
+    width 100%
+  td
+    font-size 4vmin
+    &:first-of-type
+      default(0.6, #000)
+      width 25%
+    &:last-of-type
+      default(0.6)
+      width 75%
+      justify-content left
 </style>
 
 <script>
 export default {
   data() {
     return {
-      json: require("~/assets/update_content.json"),
+      json: require("~/assets/update_content.json").reverse(),
     };
   },
 };
