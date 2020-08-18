@@ -16,11 +16,13 @@ export default {
   */
   head: {
     // title: process.env.npm_package_name || '',
-    title: "たいきのほ～むぺ～じ",
+    title: 'たいきのほ～むぺ～じ',
     meta: [
-      { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: process.env.npm_package_description || '' }
+      { charset: 'UTF-8' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1, user-scalable=no' },
+      { hid: 'description', name: 'description', content: process.env.npm_package_description || '' },
+      { name: 'keywords', content: 'たいき,ほ～むぺ～じ,ホームページ,消滅都市,ほぉむぺぇじ' },
+      { name: 'google-site-verification', content: 'baCbnYsLuIFhP8Gnd7Rx_jy1gc4gB_jvis_aiE_MZP8' },
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
