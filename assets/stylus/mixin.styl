@@ -1,0 +1,25 @@
+// リストのサイズを決める関数
+// 引数：ボードの縦と横の個数
+li_size(diver)
+  num = (100vmin / diver)
+  width num * 0.8
+  height num * 0.8
+  font-size num * 0.3
+  @media screen and (orientation portrait)
+    width num
+    height num
+// flexboxを適用する関数
+// 引数(justify-contentの指定)
+flex(option = center)
+  display flex
+  align-items center
+  justify-content option
+// widthとheightを決定する関数
+// 引数１つの時は正方形に
+wh(w, h = w)
+  width w
+  height h
+// デフォルトの背景と文字色
+default(alpha, color = #fff)
+  color color
+  background rgba(invert(color) alpha)

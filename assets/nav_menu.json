@@ -1,0 +1,62 @@
+[
+    {
+        "link": "/",
+        "title": "ホーム",
+        "day": 0
+    },
+    {
+        "link": "/Twitter",
+        "title": "Twitter",
+        "day": 0
+    },
+    {
+        "link": "/CalcBMI",
+        "title": "BMI計算",
+        "day": 1
+    },
+    {
+        "link": "/Hyakuninnissyu",
+        "title": "百人一首",
+        "day": 1
+    },
+    {
+        "link": "/HasamiShogi",
+        "title": "はさみ将棋",
+        "day": 3
+    },
+    {
+        "link": "/KaprekarNumber",
+        "title": "カプレカ数",
+        "day": 1
+    },
+    {
+        "link": "/Othello",
+        "title": "オセロ",
+        "day": 2
+    },
+    {
+        "link": "/CollatzProblem",
+        "title": "コラッツ予想",
+        "day": 1
+    },
+    {
+        "link": "/Shogi",
+        "title": "将棋",
+        "day": 4
+    },
+    {
+        "link": "/Speed",
+        "title": "スピード",
+        "day": 1
+    },
+    {
+        "link": "/OXGame",
+        "title": "◯☓ゲーム",
+        "day": 1
+    },
+    {
+        "link": "/test",
+        "title": "test",
+        "day": 1
+    }
+]

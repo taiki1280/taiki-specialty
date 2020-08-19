@@ -1,0 +1,35 @@
+// 全共通のstylesheet
+*, *::before, *::after
+  margin 0
+  box-sizing border-box
+  text-decoration none
+  list-style none
+html
+  ::-webkit-scrollbar
+    display none
+    -webkit-appearance none
+  *
+    font-family Georgia, 'ＭＳ 明朝'
+    font-weight normal
+  fontsize = 7vmin
+  h1
+    font-size fontsize
+  h2
+    font-size fontsize - 0.5
+  h3
+    font-size fontsize - 1.5
+  p
+    font-size fontsize - 2
+  a
+    font-size fontsize - 2.5
+  small
+    font-size fontsize - 4
+body
+  background linear-gradient(90deg, #0cf, #fff, #0af)
+.page
+  width 100%
+  // ページ遷移アニメーション
+.page-enter
+  opacity 0
+.page-enter-active
+  transition opacity 1s
