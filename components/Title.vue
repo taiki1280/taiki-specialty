@@ -6,7 +6,7 @@ h1 {{ title }}
 h1
   flex()
   default(0.2, #000)
-  margin 1vh 0
+  margin 2vmin 0
   height 8vh
   border solid
   border-width 2px 0
