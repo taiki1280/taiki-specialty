@@ -2,15 +2,13 @@
 div
   Header
   Nav
+  Title
   main
-    Title
     Nuxt
 </template>
 
 <style lang="stylus">
 main
   width 90%
-  display flex
-  flex-direction column
-  margin auto
+  margin 0 auto
 </style>

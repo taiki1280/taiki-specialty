@@ -1,10 +1,5 @@
 <template>
   <div>
-    <!-- <div id="TOP">
-      <h1>
-        <a>Taiki's Introduction</a>
-      </h1>
-    </div>-->
     <nav ref="nav" :id="checkTop">
       <nuxt-link v-scroll-to="'#Introduction'" to>TOP</nuxt-link>
       <nuxt-link v-scroll-to="'#Myself'" to>Myself</nuxt-link>
@@ -276,24 +271,13 @@ export default {
 <style lang="stylus" scoped>
 Menu_hight = 10vmin
 default_color = #00aaff
-html
-  overflow-x hidden
-body
-  background linear-gradient(90deg, adjust-hue(default_color, -10deg), #fff, adjust-hue(default_color, 30deg))
-#TOP, nav
+nav
   display flex
   a
     height Menu_hight
     display flex
     justify-content center
     align-items center
-#TOP
-  background-color rgba(#000, 0.8)
-  h1
-    width 100%
-  a
-    font-size 6vmin
-    text-shadow -1px -1px 5px #fff, -1px 1px 5px #fff, 1px -1px 5px #fff, 1px 1px 5px #fff
 nav
   padding 0 2vw
   margin-bottom 2vmin
@@ -312,12 +296,15 @@ nav
       margin-right auto
     &:first-of-type, &:nth-of-type(2)
       border-left solid 1px
+  a, &:visited
+    color default_color
 #top
   box-shadow 0 1vh 2vh -1vh #000
   background linear-gradient(rgba(default_color, 0.9), rgba(#fff, 0.9), rgba(default_color, 0.9))
   opacity 1
   transition all opacity ease 0.4s
-  a
+  a, &:visited
+    color #000
     text-shadow -1px -1px 1px #fff, -1px 1px 1px #fff, 1px -1px 1px #fff, 1px 1px 1px #fff
 #content
   a, p, dd

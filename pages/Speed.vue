@@ -104,7 +104,6 @@
     color #f00
     transform rotateZ(180deg)
   .serve
-    // display: flex
     justify-content center
     margin auto
     button

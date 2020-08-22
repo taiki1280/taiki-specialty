@@ -30,7 +30,7 @@
 export default {
   data() {
     return {
-      json_data: require("../Hyakuninnissyu/Hyakunin.json"),
+      json_data: require("~/assets/Hyakuninnissyu/hyakunin.json"),
       show: [],
     };
   },
@@ -43,7 +43,7 @@ export default {
       this.show.splice(i, 1, !v);
     },
     get_filename(num) {
-      return require("../Hyakuninnissyu/img/" +
+      return require("~/assets/Hyakuninnissyu/img/" +
         ("000" + num).slice(-3) +
         ".jpg");
     },

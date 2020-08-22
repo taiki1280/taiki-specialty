@@ -5,11 +5,12 @@ h1 {{ title }}
 <style lang="stylus" scoped>
 h1
   flex()
-  default(0.2, #000)
-  margin 2vmin 0
-  height 8vh
+  default(0.4, #000)
+  margin 1vmax 0
+  height 9vh
   border solid
   border-width 2px 0
+  text-shadow -1px -1px 2.5px #fff, -1px 1px 2.5px #fff, 1px -1px 2.5px #fff, 1px 1px 2.5px #fff
   div
     animation 1s appear
     @keyframes appear
