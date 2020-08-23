@@ -24,7 +24,7 @@
 
   ul
     li 正の整数を入力してください
-    li:input(type="number", min="0", v-model.number="num")
+    li: input(type="number", min="0", v-model.number="num")
     li(v-if="num > 1")
       p 「{{ num }}」が1に到達するまでの計算回数は
       p 「{{ find_CollatzProblem_num.length }}回」です。
