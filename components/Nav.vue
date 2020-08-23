@@ -13,7 +13,7 @@ nav
     transition ease 0.7s
     padding 0 0.5vw
     flex-grow 1
-    min-width 6em
+    width 7em
     height 10vh
     flex()
     font-size 100%
