@@ -13,12 +13,13 @@ nav
     transition ease 0.7s
     padding 0 0.5vw
     flex-grow 1
-    width 7em
     height 10vh
+    min-width 7%
     flex()
     font-size 100%
     @media screen and (orientation portrait)
       height 5vh
+      min-width 30%
 .nuxt-link-exact-active
   font-size 150%
   flex-grow 2
