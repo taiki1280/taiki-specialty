@@ -54,8 +54,13 @@ export default {
   ** Nuxt.js modules
   */
   modules: [
+    '@nuxtjs/pwa',
     '@nuxtjs/style-resources'
   ],
+  manifest: {
+    name: "Taiki's homepage",
+    lang: 'ja',
+  },
   styleResources: {
     stylus: [
       '~/assets/stylus/common.styl',

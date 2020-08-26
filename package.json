@@ -19,6 +19,7 @@
     "vue-scrollto": "^2.18.2"
   },
   "devDependencies": {
+    "@nuxtjs/pwa": "^3.0.1",
     "serialize-javascript": "^4.0.0"
   }
 }
