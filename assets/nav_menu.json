@@ -5,57 +5,57 @@
         "day": 0
     },
     {
-        "link": "/Introduction",
+        "link": "/introduction",
         "title": "自己紹介",
         "day": 0
     },
     {
-        "link": "/Twitter",
+        "link": "/twitter",
         "title": "Twitter",
         "day": 0
     },
     {
-        "link": "/CalcBMI",
+        "link": "/calcbmi",
         "title": "BMI計算",
         "day": 1
     },
     {
-        "link": "/Hyakuninnissyu",
+        "link": "/hyakuninnissyu",
         "title": "百人一首",
         "day": 1
     },
     {
-        "link": "/HasamiShogi",
+        "link": "/hasamishogi",
         "title": "はさみ将棋",
         "day": 3
     },
     {
-        "link": "/KaprekarNumber",
+        "link": "/kaprekarnumber",
         "title": "カプレカ数",
         "day": 1
     },
     {
-        "link": "/Othello",
+        "link": "/othello",
         "title": "オセロ",
         "day": 2
     },
     {
-        "link": "/CollatzProblem",
+        "link": "/collatzproblem",
         "title": "コラッツ予想",
         "day": 1
     },
     {
-        "link": "/Shogi",
+        "link": "/shogi",
         "title": "将棋",
         "day": 4
     },
     {
-        "link": "/Speed",
+        "link": "/speed",
         "title": "スピード",
         "day": 1
     },
     {
-        "link": "/OXGame",
+        "link": "/oxgame",
         "title": "◯☓ゲーム",
         "day": 1
     },
