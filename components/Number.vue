@@ -13,6 +13,7 @@
 #contents
   display flex
   flex-wrap wrap
+  width 100%
 .numbers
   flex(space-evenly)
   flex-grow 1
