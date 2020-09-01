@@ -1,12 +1,17 @@
 <template>
   <div id="Speed">
     <div id="main">
-      <div class="serve p2" :class="{'invisible': turn || !judge_can_serve}">
+      <div class="serve p2 rotate" :class="{'invisible': turn || !judge_can_serve}">
         <button @click="serve_p2()">バトルゾーンに出す。</button>
       </div>
       <div>
         <ul>
-          <li class="p2" v-for="(value,key) in p2_hand" :key="key" @click="select_one(value)">
+          <li
+            class="p2 rotate"
+            v-for="(value,key) in p2_hand"
+            :key="key"
+            @click="select_one(value)"
+          >
             <div>{{value}}</div>
           </li>
         </ul>
@@ -19,18 +24,18 @@
           </li>
           <li :class="add_class(field.p1)">
             <div>
-              <p style="transform:rotateZ(180deg)">{{field.p1}}</p>
+              <p class="rotate">{{field.p1}}</p>
               <p>{{field.p1}}</p>
             </div>
           </li>
           <li :class="add_class(field.p2)">
             <div>
-              <p style="transform:rotateZ(180deg)">{{field.p2}}</p>
+              <p class="rotate">{{field.p2}}</p>
               <p>{{field.p2}}</p>
             </div>
           </li>
           <li>
-            <div>
+            <div class="rotate">
               <p class="p2">残り</p>
               <p class="p2">{{p2_mountain.length}}枚</p>
             </div>
@@ -102,7 +107,6 @@
     color #000
   .p2
     color #f00
-    transform rotateZ(180deg)
   .serve
     justify-content center
     margin auto
