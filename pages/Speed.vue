@@ -1,69 +1,51 @@
-<template>
-  <div id="Speed">
-    <div id="main">
-      <div class="serve p2 rotate" :class="{'invisible': turn || !judge_can_serve}">
-        <button @click="serve_p2()">バトルゾーンに出す。</button>
-      </div>
-      <div>
-        <ul>
-          <li
-            class="p2 rotate"
-            v-for="(value,key) in p2_hand"
-            :key="key"
-            @click="select_one(value)"
-          >
-            <div>{{value}}</div>
-          </li>
-        </ul>
-        <ul>
-          <li>
-            <div>
-              <p class="p1">残り</p>
-              <p class="p1">{{p1_mountain.length}}枚</p>
-            </div>
-          </li>
-          <li :class="add_class(field.p1)">
-            <div>
-              <p class="rotate">{{field.p1}}</p>
-              <p>{{field.p1}}</p>
-            </div>
-          </li>
-          <li :class="add_class(field.p2)">
-            <div>
-              <p class="rotate">{{field.p2}}</p>
-              <p>{{field.p2}}</p>
-            </div>
-          </li>
-          <li>
-            <div class="rotate">
-              <p class="p2">残り</p>
-              <p class="p2">{{p2_mountain.length}}枚</p>
-            </div>
-          </li>
-        </ul>
-        <ul>
-          <li class="p1" v-for="(value,key) in p1_hand" :key="key" @click="select_one(value)">
-            <div>{{value}}</div>
-          </li>
-        </ul>
-      </div>
-      <div class="serve p1" :class="{'invisible': !turn || !judge_can_serve}">
-        <button @click="serve_p1()">バトルゾーンに出す。</button>
-      </div>
-    </div>
-
-    <div id="status">
-      <ul>
-        <li>{{status}}</li>
-        <li>p1山札{{mountain.p1.slice(4)}}</li>
-        <li>p2山札{{mountain.p2.slice(4)}}</li>
-        <li>p1手札{{p1_hand}}</li>
-        <li>p2手札{{p2_hand}}</li>
-        <li>p1バトルゾーン{{field.p1}}</li>
-        <li>p2バトルゾーン{{field.p2}}</li>
-      </ul>
-    </div>
-  </div>
+<template lang="pug">
+#Speed
+  #main
+    .serve.p2.rotate(:class="{ invisible: turn || !judge_can_serve }")
+      button(@click="serve_p2()") バトルゾーンに出す。
+    div
+      ul.rotate
+        li.p2(
+          v-for="(value, key) in p2_hand",
+          :key="key",
+          @click="select_one(value)"
+        )
+          div {{ value }}
+      ul
+        li
+          div
+            p.p1 残り
+            p.p1 {{ p1_mountain.length }}枚
+        li(:class="add_class(field.p1)")
+          div
+            p.rotate {{ field.p1 }}
+            p {{ field.p1 }}
+        li(:class="add_class(field.p2)")
+          div
+            p.rotate {{ field.p2 }}
+            p {{ field.p2 }}
+        li
+          .rotate
+            p.p2 残り
+            p.p2 {{ p2_mountain.length }}枚
+      ul
+        li.p1(
+          v-for="(value, key) in p1_hand",
+          :key="key",
+          @click="select_one(value)"
+        )
+          div {{ value }}
+    .serve.p1(:class="{ invisible: !turn || !judge_can_serve }")
+      button(@click="serve_p1()") バトルゾーンに出す。
+  #status
+    ul
+      li {{ status }}
+      li p1山札{{ mountain.p1.slice(4) }}
+      li p2山札{{ mountain.p2.slice(4) }}
+      li p1手札{{ p1_hand }}
+      li p2手札{{ p2_hand }}
+      li p1バトルゾーン{{ field.p1 }}
+      li p2バトルゾーン{{ field.p2 }}
 </template>
 
 
@@ -111,6 +93,7 @@
     justify-content center
     margin auto
     button
+      border-radius 10vmax
       width 90vw
       @media screen and (orientation portrait)
         height 12vh
