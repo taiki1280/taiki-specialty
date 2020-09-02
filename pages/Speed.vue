@@ -93,10 +93,8 @@
     justify-content center
     margin auto
     button
-      border-radius 10vmax
-      width 90vw
+      wh(90vw, 12vh)
       @media screen and (orientation portrait)
-        height 12vh
         font-size 6vw
   .invisible
     opacity 0
