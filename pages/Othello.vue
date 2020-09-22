@@ -20,7 +20,7 @@
         div(v-if="now_turn == 1", style="background:black;color:white") 黒のターン
         div(v-else) 白のターン
   #main
-    button(@click="pass()") パスする
+    //- button(@click="pass()") パスする
     Board(
       game="Othello",
       :selectOne="selectOne",
@@ -28,7 +28,7 @@
       :addLast="addLast",
       :banmen="banmen"
     )
-    button(@click="pass()") パスする
+    //- button(@click="pass()") パスする
 </template>
 
 <style lang="stylus" scoped>
@@ -145,7 +145,7 @@ export default {
       }
       if (this.now_turn == 2 && this.mode === "CPU") {
         let num = Math.floor(Math.random() * this.can_put_list.length);
-        this.selectOne(this.can_put_list[num][0], this.can_put_list[num][1]);
+        this.selectOne(this.can_put_list[num][0], this.can_put_list[num][1], 0);
       }
     },
     at_least_can_piece_one() {
