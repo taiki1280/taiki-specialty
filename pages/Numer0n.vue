@@ -1,6 +1,6 @@
 <template lang="pug">
 div
-  #status
+  #status(v-if="p1_ans.length * p2_ans.length == 0")
     p status
     //- p(v-for="(item, key) in status_list", :key="key")
     Number(:clicked="clicked")
@@ -16,12 +16,12 @@ div
     //- p(v-if="p2_ans.length == 0") p2_ans: {{ p2_ans }}
     //- p(v-else-if="p2_ans.length == 0") ２人目の入力をしてください。
     p(v-else) ２人目の入力をしてください。
-  #main
+  #main(v-else)
     .guess_list.rotate
       p p2の予想リスト
       .result
         div(v-for="(item, key) in p2_guess_list", :key="key") {{ Object.keys(item).join(' ') }} : {{ Object.values(item)[0] }}
-    Number(:clicked="clicked")
+    Number(:clicked="clicked", :class="isRotate")
     .guess_list
       p p1の予想リスト
       .result
@@ -63,6 +63,12 @@ export default {
       turn: true,
       test: "ready",
     };
+  },
+  computed: {
+    isRotate() {
+      if (this.turn) return "";
+      return "rotate";
+    },
   },
   methods: {
     clicked(num) {
