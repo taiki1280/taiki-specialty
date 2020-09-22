@@ -36,19 +36,17 @@ export default {
 
 <style lang="stylus">
 #board
-  *
-    box-sizing border-box
   ul, li
     flex()
-    padding 0
-    list-style none
+    // list-style none
   ul
     // 中身のみにボーダーを設定
-    li
-      border-top solid 0.5px
-      border-left solid 0.5px
-      &:last-of-type
-        border-right solid 0.5px
     &:last-of-type
-      border-bottom solid 0.5px
+      li
+        border-bottom solid 1px
+    li
+      border-top solid 1px
+      border-left solid 1px
+      &:last-of-type
+        border-right solid 1px
 </style>

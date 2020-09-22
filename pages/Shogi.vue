@@ -661,7 +661,7 @@ export default {
           width 100%
         ul
           li
-            border solid 0.5px
+            border solid 1px
         .駒
           li_size((9 / 0.8))
           + div
@@ -695,7 +695,7 @@ export default {
       height 80%
       border-radius 2vmin
     .p1, .p2
-      border 0.5px solid
+      border 1px solid
     .p2
       transform rotateZ(180deg)
     .can_select_p1
