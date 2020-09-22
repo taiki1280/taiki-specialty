@@ -18,7 +18,7 @@ export default {
     // title: process.env.npm_package_name || '',
     title: 'たいきのほ～むぺ～じ',
     meta: [
-      { name: 'google-site-verification', content: 'baCbnYsLuIFhP8Gnd7Rx_jy1gc4gB_jvis_aiE_MZP8' },
+      { name: 'google-site-verification', content: 'jAODd4kt_yrxVY5UsmJ-I_kSozhlEPO8p3TGj6Exkak' },
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       // { hid: 'description', name: 'description', content: process.env.npm_package_description || '' }
