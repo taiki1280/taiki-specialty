@@ -1,4 +1,4 @@
-# taiki1280.github.io
+# taiki-specialty
 
 ## Build Setup
 

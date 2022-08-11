@@ -1,5 +1,8 @@
-
 export default {
+  router: {
+    base: '/taiki-specialty/'
+  },
+  target: 'static',
   /*
   ** Nuxt rendering mode
   ** See https://nuxtjs.org/api/configuration-mode
@@ -58,7 +61,7 @@ export default {
     '@nuxtjs/style-resources'
   ],
   manifest: {
-    name: "Taiki's homepage",
+    name: "taiki-specialty",
     lang: 'ja',
   },
   styleResources: {
