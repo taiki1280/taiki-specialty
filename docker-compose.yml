@@ -5,8 +5,8 @@ services:
       context: .
       dockerfile: Dockerfile
     container_name: "taiki-specialty"
-    ports:
-      - "80:80"
+    # ports:
+    #   - "80:80"
     volumes:
       - ./etc/nginx/conf.d/taiki-specialty.conf:/etc/nginx/conf.d/taiki-specialty.conf
     environment:
