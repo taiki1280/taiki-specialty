@@ -1,6 +1,6 @@
 export default {
   router: {
-    base: '/taiki-specialty/'
+    base: '/specialty/'
   },
   target: 'static',
   /*
@@ -61,7 +61,7 @@ export default {
     '@nuxtjs/style-resources'
   ],
   manifest: {
-    name: "taiki-specialty",
+    name: "specialty",
     lang: 'ja',
   },
   styleResources: {

@@ -1,4 +1,4 @@
-# taiki-specialty
+# specialty
 
 ## Build Setup
 
