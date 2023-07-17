@@ -8,7 +8,7 @@ services:
     # ports:
     #   - "80:80"
     volumes:
-      - ./docker/nginx/conf.d/specialty.conf:/etc/nginx/conf.d/specialty.conf
+      - ./docker/nginx/conf.d/specialty.conf:/etc/nginx/conf.d/default.conf
     environment:
       VIRTUAL_HOST: 'taiki-web.ninsan.mydns.jp'
     restart: always

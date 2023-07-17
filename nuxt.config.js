@@ -1,6 +1,6 @@
 export default {
   router: {
-    base: '/specialty/'
+    base: '/specialty'
   },
   target: 'static',
   /*
